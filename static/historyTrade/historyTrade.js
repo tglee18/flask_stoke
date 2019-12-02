@@ -13,7 +13,7 @@ $(function () {
         get_history: function () {
             var new_window = window.open();
             $.ajax({
-                url: "/history_trade/get_historyTrade",
+                url: "/historyTrade/download_historyTrade",
                 type: "GET",
                 data:{
                         begin_year:$("#begin_year").val(),

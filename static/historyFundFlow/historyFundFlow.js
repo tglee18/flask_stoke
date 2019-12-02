@@ -12,7 +12,7 @@ $(function () {
         },
         get_fundflow: function () {
             $.ajax({
-                url: "/fund_flow/fund_flow",
+                url: "/historyFundFlow/get_historyFundFlow",
                 type: "GET",
                 data: {type: $("#cmpny_select option:selected").val(),
                         text: $("#stoke_code").val()},

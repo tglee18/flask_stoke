@@ -4,15 +4,15 @@ from flask import render_template, request, Blueprint
 from config import db
 from bs4 import BeautifulSoup
 
-fund_flow = Blueprint('fund_flow', __name__)
+historyFundFlow = Blueprint('historyFundFlow', __name__)
 
 
-@fund_flow.route('/')
+@historyFundFlow.route('/')
 def index():
-    return render_template("fund_flow.html")
+    return render_template("historyFundFlow.html")
 
 
-@fund_flow.route('/fund_flow')
+@historyFundFlow.route('/get_historyFundFlow')
 def get_data():
     q_type = request.args.get("type")
     q_text = request.args.get("text")
