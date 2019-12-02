@@ -1,5 +1,5 @@
 from config import app
-from views import moneyFlow
+from views.moneyFlow import moneyFlow
 from views.login import login
 from views.baseinfo import analysis
 from views.fininfo import fininfo
