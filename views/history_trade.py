@@ -1,15 +1,15 @@
 from flask import render_template, request, Blueprint
 from config import db
 
-history = Blueprint('history', __name__)
+history_trade = Blueprint('history_trade', __name__)
 
 
-@history.route('/')
+@history_trade.route('/')
 def index():
-    return render_template("history.html")
+    return render_template("history_trade.html")
 
 
-@history.route('/get_history', methods=["GET"])
+@history_trade.route('/get_historyTrade', methods=["GET"])
 def get_history():
     begin_year = request.args.get("begin_year")
     begin_month = request.args.get("begin_month")
