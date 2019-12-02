@@ -3,10 +3,8 @@ $(function () {
     });
 
     var RequestUtils = {
-        //{#绑定界面的按钮事件#}
         initBind: function () {
             $("#getTransactionData").on("click", function () {
-                // console.log($("#cmpny_select option:selected").val())
                 RequestUtils.get_transactionData();
             });
         },
