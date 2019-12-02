@@ -18,6 +18,7 @@ app.register_blueprint(transactionData, url_prefix="/transactionData")  # 交易
 app.register_blueprint(historyFundFlow, url_prefix="/historyFundFlow")  # 历史资金流向
 app.register_blueprint(moneyFlow, url_prefix="/moneyFlow")  # 详细资金流向
 #test
+#sdsad
 
 if __name__ == '__main__':
     app.run()
