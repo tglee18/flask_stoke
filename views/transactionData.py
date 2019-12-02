@@ -4,15 +4,15 @@ from flask import render_template, request, Blueprint
 from config import db
 from bs4 import BeautifulSoup
 
-transaction_data = Blueprint('transaction_data', __name__)
+transactionData = Blueprint('transactionData', __name__)
 
 
-@transaction_data.route('/')
+@transactionData.route('/')
 def index():
-    return render_template("transaction_data.html")
+    return render_template("transactionData.html")
 
 
-@transaction_data.route('/transaction_data')
+@transactionData.route('/get_transactionData')
 def get_data():
     q_type = request.args.get("type")
     q_text = request.args.get("text")

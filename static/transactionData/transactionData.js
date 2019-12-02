@@ -7,12 +7,12 @@ $(function () {
         initBind: function () {
             $("#getTransactionData").on("click", function () {
                 // console.log($("#cmpny_select option:selected").val())
-                RequestUtils.get_transactiondata();
+                RequestUtils.get_transactionData();
             });
         },
-        get_transactiondata: function () {
+        get_transactionData: function () {
             $.ajax({
-                url: "/transaction_data/transaction_data",
+                url: "/transactionData/get_transactionData",
                 type: "GET",
                 data: {type: $("#cmpny_select option:selected").val(),
                         text: $("#stoke_code").val()},
