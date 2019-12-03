@@ -46,10 +46,9 @@ def get_data():
     info = html.find('div', class_="inner_box").find('table', class_="table_bg001 border_box")
     tr = info.find_all('tr')
     view = []
-    for i in range(7):
-        td = tr[i + 1].find_all('td')
+    for i in tr[1:]:
+        td = i.find_all('td')
         data_item2 = {
-            "id": i,                            #简单的序号
             "date": td[0].get_text(),           #日期
             "close": td[1].get_text(),          #收盘价
             "percent": td[2].get_text(),        #涨跌幅
