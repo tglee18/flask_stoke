@@ -1,13 +1,14 @@
 import json
 import requests
 from flask import render_template, request, Blueprint
-from config import db
+from config import db, is_login
 from bs4 import BeautifulSoup
 
 historyFundFlow = Blueprint('historyFundFlow', __name__)
 
 
 @historyFundFlow.route('/')
+@is_login
 def index():
     return render_template("historyFundFlow.html")
 

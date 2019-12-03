@@ -11,7 +11,6 @@ analysis = Blueprint('webaccess', __name__)
 @analysis.route('/')
 @is_login
 def index():
-    print(session['username'])
     return render_template("baseinfo.html")
 
 

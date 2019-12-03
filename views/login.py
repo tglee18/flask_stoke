@@ -10,7 +10,10 @@ login = Blueprint('login', __name__)
 @login.route('/', methods=['POST', 'GET'])
 def logins():
     if request.method == 'GET':
-        return render_template('login.html')
+        if session.get("username"):
+            return render_template('baseinfo.html')    #这里是跳转到搜索页
+        else:
+            return render_template('login.html')
     else:
         user_id = request.form.get('id')
         pwd = request.form.get('pwd')

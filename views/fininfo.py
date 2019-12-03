@@ -1,12 +1,13 @@
 import requests
 import json
 from flask import render_template, request, Blueprint
-from config import db
+from config import db, is_login
 
 fininfo = Blueprint('fininfo', __name__)
 
 
 @fininfo.route('/')
+@is_login
 def index():
     return render_template("fininfo.html")
 

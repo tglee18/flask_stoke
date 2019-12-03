@@ -1,10 +1,11 @@
 from flask import render_template, request, Blueprint
-from config import db
+from config import db, is_login
 
 historyTrade = Blueprint('historyTrade', __name__)
 
 
 @historyTrade.route('/')
+@is_login
 def index():
     return render_template("historyTrade.html")
 
