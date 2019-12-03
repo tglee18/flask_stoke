@@ -3,10 +3,13 @@ import json
 import requests
 from flask import render_template, request, Blueprint
 
+from config import is_login
+
 moneyFlow = Blueprint('moneyFlow', __name__)
 
 
 @moneyFlow.route('/')
+@is_login
 def index():
     return render_template("moneyFlow.html")
 

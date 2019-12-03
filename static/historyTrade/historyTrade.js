@@ -22,12 +22,12 @@ $(function () {
                         end_year:$("#end_year").val(),
                         end_month:$("#end_month").val(),
                         end_day:$("#end_day").val(),
-                        type: $("#cmpny_select option:selected").val(),
                         text: $("#stoke_code").val()
                 },
-                dataType: "text",
+                dataType: "json",
                 success:function (data) {
-                    new_window.location = data;
+                    console.log(data.datas)
+                    new_window.location = data.datas;
                 }
             });
         }

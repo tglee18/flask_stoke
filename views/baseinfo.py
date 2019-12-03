@@ -1,13 +1,15 @@
 import json
+from functools import wraps
 
-from flask import render_template, request, Blueprint
+from flask import render_template, request, Blueprint, session
 
-from config import db
+from config import db, is_login
 
 analysis = Blueprint('webaccess', __name__)
 
 
 @analysis.route('/')
+@is_login
 def index():
     return render_template("baseinfo.html")
 

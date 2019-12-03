@@ -14,8 +14,7 @@ $(function () {
             $.ajax({
                 url: "/fininfo/get_fininfo",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        text: $("#stoke_code").val()},
+                data: {text: $("#stoke_code").val()},
                 dataType: "json",
                 success: function (data) {
                     console.log(data)

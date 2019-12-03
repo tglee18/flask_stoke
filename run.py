@@ -1,3 +1,5 @@
+
+
 from config import app
 from views.moneyFlow import moneyFlow
 from views.login import login
@@ -17,6 +19,7 @@ app.register_blueprint(register, url_prefix="/register")  # 注册
 app.register_blueprint(transactionData, url_prefix="/transactionData")  # 交易信息
 app.register_blueprint(historyFundFlow, url_prefix="/historyFundFlow")  # 历史资金流向
 app.register_blueprint(moneyFlow, url_prefix="/moneyFlow")  # 详细资金流向
+
 
 if __name__ == '__main__':
     app.run()
