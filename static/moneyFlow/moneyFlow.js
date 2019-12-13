@@ -23,8 +23,7 @@ $(function () {
             $.ajax({
                 url: "/moneyFlow/get_moneyFlow",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        stokeCode: $("#stoke_code").val()},
+                data: {stokeCode: $("#stoke_code").val()},
                 dataType: "json",
                 success: function (data) {
                     console.log(data)
@@ -36,8 +35,7 @@ $(function () {
             $.ajax({
                 url: "/moneyFlow/get_zc",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        stokeCode: $("#stoke_code").val()},
+                data: {stokeCode: $("#stoke_code").val()},
                 dataType: "html",
                 success: function (data) {
                     console.log(data)
@@ -49,8 +47,7 @@ $(function () {
             $.ajax({
                 url: "/moneyFlow/get_jc",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        stokeCode: $("#stoke_code").val()},
+                data: {stokeCode: $("#stoke_code").val()},
                 dataType: "html",
                 success: function (data) {
                     console.log(data)

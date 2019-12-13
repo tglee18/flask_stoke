@@ -15,8 +15,7 @@ $(function () {
             $.ajax({
                 url: "/transactionData/get_transactionData7",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        text: $("#stoke_code").val()},
+                data: {text: $("#stoke_code").val()},
                 dataType: "json",
                 success: function (data) {
                     console.log(data)
@@ -27,8 +26,7 @@ $(function () {
             $.ajax({
                 url: "/transactionData/get_HistoryTransactionData",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        text: $("#stoke_code").val()},
+                data: {text: $("#stoke_code").val()},
                 dataType: "json",
                 success: function (data) {
                     console.log(data)

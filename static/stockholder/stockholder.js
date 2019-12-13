@@ -22,8 +22,7 @@ $(function () {
             $.ajax({
                 url: "/stockholder/a",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        text: $("#stoke_code").val()},
+                data: {text: $("#stoke_code").val()},
                 dataType: "json",
                 success: function (data) {
                     console.log(data)
@@ -34,8 +33,7 @@ $(function () {
             $.ajax({
                 url: "/stockholder/b",
                 type: "GET",
-                data: {type: $("#cmpny_select option:selected").val(),
-                        text: $("#stoke_code").val()},
+                data: {text: $("#stoke_code").val()},
                 dataType: "json",
                 success: function (data) {
                     console.log(data)

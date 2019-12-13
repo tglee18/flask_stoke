@@ -19,7 +19,7 @@ $(function () {
                 dataType: "json",
                 success: function (data) {
                     if(data.statuss=="success"){
-                        window.location.href="/baseinfo/myInterface"
+                        window.location.href="/baseinfo"
                     }
 
                 },

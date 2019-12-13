@@ -45,7 +45,7 @@ def get_data():
                 "main_net_inflow": td[9].get_text()  # 主力净流入
             }
             view_data.append(data_item)
-        data_pkg = {"status": "success", "datas": json.dumps(view_data)}
+        data_pkg = {"status": "success", "datas": view_data}
     else:
         data_pkg = {"status": "failed"}
 
@@ -90,7 +90,7 @@ def get_data2():
                     }
                     view_data.append(data_item)
                 k += 1
-        data_pkg = {"status": "success", "datas": json.dumps(view_data)}
+        data_pkg = {"status": "success", "datas": view_data}
         return json.dumps(data_pkg)
     else:
         data_pkg = {"status": "failed"}
