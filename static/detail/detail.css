@@ -1,0 +1,56 @@
+.head {
+    width:6rem;
+    height:60px;
+    font-size:1.5rem;
+    margin:10px auto;
+}
+
+#com_general {
+    list-style: none;
+    width:80%;
+    height:auto;
+    margin:10px auto;
+    background-color: #f8f8f8;
+    padding-top:20px;
+}
+
+#com_general li {
+    list-style: none;
+    width:80%;
+    height:auto;
+    margin: 20px auto;
+    background-color: white;
+    border-radius:5px;
+}
+#com_general li :hover {
+    cursor:pointer;
+}
+
+
+ #com_general li :first-child {
+    top:20px;
+}
+#com_general li  #name{
+    width:100%;
+    height:auto;
+    font-size: 1.25rem;
+    text-indent: .5rem;
+    padding-top:10px;
+    color:black;
+
+}
+#com_general li  #name p {
+    font-size:.75rem;
+    color:grey;
+}
+#com_general li  #content  {
+    padding-bottom:20px;
+}
+#com_general li  #content p {
+    color:grey;
+    margin:10px;
+    font-size:.85rem;
+    text-indent: .5rem;
+}
+
+

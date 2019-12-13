@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>登录</title>
+        <script type="text/javascript" src="index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/index/index1.css">
+        <style>
+            body {
+                padding:0;
+                margin:0
+            }
+           .bk1 {
+               position:fixed;
+               width:100%;
+               height:50%;
+               top:0;
+           }
+           .bk2 {
+               position:fixed;
+               width:100%;
+               height:50%;
+               top:50%;
+               bottom:0;
+               background-color:#34495e;
+               z-index:-1;
+           }
+
+            .content {
+
+                background-color: white;
+                height:470px;
+                width:500px;
+                margin:50px auto;
+                box-shadow:#666 0px 0px 20px; 
+                z-index:10000;
+            }
+           .image {
+               height:190px;
+               width:190px;
+               margin:10px auto;
+               
+           }
+           svg {
+               height:150px;
+               width:150px;
+               margin-top:40px;
+               margin-left:20px;
+              
+           }
+            .log {
+                display:flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                height:200px;
+                width:500px;
+                margin:0 auto;
+               
+            }
+            input {
+                background-color:#eee;
+                height:40px;
+                width:350px;
+                border-style: none;
+                border-bottom:1px #000055;
+                border-radius: 10px;
+                outline: none;
+            }
+           
+            button {
+                display:block;
+                margin:10px auto;
+                border-style: none;
+                width:350px;
+                height:40px;
+                border-radius: 5px;
+                background-color:	#000055;
+                 color:white;
+                letter-spacing: .5rem;
+                cursor: pointer;
+               
+            }
+        </style>
+    </head>
+
+    <body>
+            <div class="header">
+                    <ul>
+                        <li><a href="index1.html">首页</a></li>      
+                        <li><a class="active" href="log.html">登录</a></li>
+                        <li><a href="register.html">注册</a></li>
+                        <li><a>个人中心</a></li>
+                    </ul>
+                <div id="welcome"><span >欢迎</span><i class="iconfont &#xe6c8;"></i></div>
+            </div>
+        <div class="bk1"></div>
+        <div class="bk2"></div>
+        <div class="content">
+                <div class="image">
+                        <svg t="1573980361102" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2050" width="200" height="200">
+                            <path d="M512 512C606.229333 512 682.666667 435.498667 682.666667 341.333333 682.666667 247.125333 606.229333 170.666667 512 170.666667 417.792 170.666667 341.333333 247.125333 341.333333 341.333333 341.333333 435.498667 417.792 512 512 512ZM512 597.333333C398.229333 597.333333 170.666667 654.293333 170.666667 768L170.666667 853.333333 853.333333 853.333333 853.333333 768C853.333333 654.293333 625.792 597.333333 512 597.333333Z" p-id="2051" fill="#13227a">
+        
+                            </path>
+                        </svg>
+                </div>
+                <form class="log" action="" method="">
+                    <input type="text" placeholder="请输入账号" name="id">
+                    <input type="text" placeholder="请输入密码" name="password">
+                 
+                </form>
+                <button>登录</button>
+        </div>
+       
+    </body>
+    <script>
+         
+    </script>

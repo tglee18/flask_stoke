@@ -1,0 +1,106 @@
+.header {
+    padding: 0;
+    margin:0;
+    height:4rem;
+    width:100%;
+    background:#000066;
+   
+}
+.header ul,li{
+    padding: 0;
+    margin:0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.header li{
+    position: relative;	
+    float:left;
+}
+.header ul{
+    display:inline-block;
+    font-family:"宋体";
+    font-size:1.2rem;
+    width:32rem;
+    height:4rem;
+   
+}
+ 
+.header li a{
+    width: 8rem;
+    height: 4rem;
+    background:#000066;
+    color: white;
+    text-align: center;
+    line-height:4rem;
+    
+}
+.header li span:index1{
+    background: #990033;
+}
+.header li a:hover{
+    background: #990033;
+    cursor:pointer;
+}
+.header li .active{
+    background: #990033;
+}
+.header li :last-child {
+    float:right;
+
+}
+#welcome{
+float:right;
+height:4rem;
+width:8rem;
+line-height:4rem;
+
+}
+#welcome span {
+text-align:center;
+font-size:.8rem;
+color:white;
+
+}
+.slogan{
+width:40rem;
+height:4rem;
+margin:150px auto;
+font-family: "微软雅黑";
+color: white;
+font-size: 4rem;
+text-align:center;
+z-index:100;
+}
+
+
+.search{
+        width: 30rem;            
+        margin: 100px auto;
+        position: relative;
+        display: flex;
+}
+.search input{
+        float: left;
+        flex: 4;
+        height: 2.5rem;
+        outline: none;
+        padding-left: 15rem;
+}
+.search button{
+        float: right;
+        flex: 1;
+        height: 2.5rem;
+        width:5rem;
+        background-color: #990033;
+        color: white;
+        border-style: none;
+        border-radius: 10%;
+        outline: none;
+}
+.search button i{
+        font-style: normal;
+        font-size:1rem;
+        letter-spacing: .5rem;
+}
