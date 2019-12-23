@@ -2,6 +2,7 @@ import requests
 import json
 from flask import render_template, request, Blueprint
 from config import db, is_login
+from bs4 import BeautifulSoup
 
 fininfo = Blueprint('fininfo', __name__)
 
@@ -23,13 +24,19 @@ def get_data():
         judge = code[1]
         if judge == 'H':
             code_new = '0' + code[2:]
+            code_new2 = 'sh' + code[2:]
         else:
             code_new = '1' + code[2:]
+            code_new2 = 'sz' + code[2:]
         url = "http://api.money.126.net/data/feed/0000001,0601128,1002142,0601818,0601166,{},money.api?" \
               "callback=_ntes_quote_callback62576441".format(code_new)
+        url2 = "http://quotes.money.163.com/{}.html".format(code_new)
+        url3 = "http://sqt.gtimg.cn/q={}&offset=40".format(code_new2)
+        url4 = "http://sqt.gtimg.cn/q={}&offset=45".format(code_new2)
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36'
         }
+
         response = requests.get(url, headers)
         response.encoding = 'utf-8'
         html = response.text
@@ -47,6 +54,21 @@ def get_data():
         low = dict_json['{}'.format(code_new)]['low']
         volume = dict_json['{}'.format(code_new)]['volume']
         turnover = dict_json['{}'.format(code_new)]['turnover']
+
+        req = requests.get(url2, headers).text
+        html2 = BeautifulSoup(req, "html5lib")
+        info = html2.find('tr', class_="stock_bref")
+        highest = info.find('span', class_="cRed").get_text()
+        lowest = info.find('span', class_="cGreen").get_text()
+
+        req2 = requests.get(url3, headers).text
+        html3 = BeautifulSoup(req2, "html5lib").find('body').get_text()
+        syl = html3[11:].strip().strip('"";')
+
+        req3 = requests.get(url4, headers).text
+        html4 = BeautifulSoup(req3, "html5lib").find('body').get_text()
+        ltsz = html4[11:].strip().strip('"";')
+
         base_data = {
             "company": name,  # 公司
             "price": price,  # 价格
@@ -58,7 +80,11 @@ def get_data():
             "high": high,  # 最高
             "low": low,  # 最低
             "volume": volume,  # 成交量
-            "turnover": turnover  # 成交额
+            "turnover": turnover,  # 成交额
+            "highest": highest,  #52周最高
+            "lowest": lowest,  #52周最低
+            "syl": syl,  #市盈率
+            "ltsz": ltsz  #流通市值
         }
         data_pkg = {"status": "success",
                      "datas": base_data}
