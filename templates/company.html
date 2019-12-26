@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+     <script src="/static/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/static/company/company.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../static/index/index1.css">
     <title>company</title>
     <style>
     body {
-        background-color: #f0f0f0;
         margin:0;
         padding:0;
+        background: url("/static/image/background.jpg")
+        repeat 0px 0px fixed;
+        background-size:100% 100%;
+        z-index: -1;
     }
     a {
         text-decoration: none;
@@ -24,7 +27,7 @@
     background-color:#f8f8f8;
     height:auto;
     margin: 10px auto;
-    box-shadow: #666 0px 0px 15px; 
+    box-shadow: #666 0px 0px 15px;
 }
 
 .base_intro {
@@ -43,12 +46,12 @@
     text-indent: .5rem;
     padding-top:10px;
     color:white;
-    
+
 }
 
  #content  {
     padding-bottom:20px;
-    
+
 }
 #content span {
     color:#eee;
@@ -67,7 +70,7 @@
     color:#34495e;
     height:40px;
     line-height: 40px;
-    
+
 }
 .base_table table {
     margin-left:.5rem;
@@ -78,7 +81,7 @@
     height:70px;
     margin:20px auto;
     background-color: white;
-    box-shadow: #666 0px 0px 15px; 
+    box-shadow: #666 0px 0px 15px;
 }
 .child_header svg{
     float:left;
@@ -103,13 +106,13 @@ table {
     border:1px solid #ccc;
     background-color:white;
 }
-#base_table #tag {
+#tag {
     background-color:#34495e;
     color:white;
     width: 150px;
 
  }
- 
+
 #all {
     margin:0 auto;
     width:60%;
@@ -124,7 +127,7 @@ table {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: #000066;
+    background-color: rgba(0,0,0,0.2);
 
 }
 #gen_ul li {
@@ -133,46 +136,58 @@ table {
 
 }
 #gen_ul li a {
-    display:inline-block;
-    width:100%;
-    height:60px;
+    display: inline-block;
+    width: 100%;
+    height: 60px;
     text-align: center;
     line-height: 60px;
     color: white;
-    background-color:#000066;
-}
 
+}
 #gen_ul li a:hover{
-        background: #990033;
+        font-size:1.4rem;
+        background-color: rgba(0,0,0,0.2);
         cursor:pointer;
 }
 #gen_ul li .active {
-    background: #990033;
+    font-size:1.4rem;
+    background-color: rgba(0,0,0,0.2);
 }
 #gen_ul  li a:active{
-    	background: #990033;
+    font-size:1.4rem;
+    background-color: rgba(0,0,0,0.2);
     }
 #fond_flow :not(:first-child){
     display:none;
 }
-
+    #fond_flow1 :not(:first-child){
+        display:none;
+    }
+    #fond_flow1:hover{
+        display:block;
+    }
+.son{
+    background-color: rgba(0,0,0,0.3);
+}
 </style>
 </head>
 <body>
-   
+
 <div id="all">
     <ul id="gen_ul">
-        <li><a>首页概览</a></li>
+        <li><a href="comp_index.html">首页概览</a></li>
         <ul id="fond_flow">
-            <li><a>资金流向</a></li>
-             <li><a>资金流向</a></li>
-            <li><a>历史交易数据</a></li>
-            <li><a>历史资金流向</a></li>
+            <li><a href="zijinliuxiang">资金流向</a></li>
+             <li><a class="son">资金流向</a></li>
+            <li><a class="son">历史交易数据</a></li>
+            <li><a class="son">历史资金流向</a></li>
         </ul>
-
-        <li><a>财务分析</a></li>
+        <ul id="fond_flow1">
+            <li><a href="analysis.html">财务分析</a></li>
+            <li><a class="son">主要财务指标</a></li>
+        </ul>
         <li><a href="staff.html">股东股本</a></li>
-         <li><a href="company" class="active">公司简介</a></li>
+         <li><a href="company.html" class="active">公司简介</a></li>
     </ul>
 
     <div class="base_intro">
@@ -206,7 +221,7 @@ table {
                     <td id="tag">曾用名</td>
                     <td colspan="3"></td>
                 </tr>
-                
+
                 <tr>
                     <td id="tag">A股代码</td>
                     <td></td>

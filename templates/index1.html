@@ -3,26 +3,135 @@
 <head>
 	<title>首页-财务分析系统</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../static/index/index1.css">
-	
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+
 </head>
 <style>
     body {
         margin:0;
         padding:0;
-        background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575120050968&di=07857ac0ec2a7d14b143bf49cb6fdb74&imgtype=0&src=http%3A%2F%2Fphoto.tuchong.com%2F56510%2Ff%2F8412122.jpg)
+        background: url("/static/image/background.jpg")
 	            repeat 0px 0px fixed;
         background-size:100% 100%;
 	    z-index: -1;
     }
-   
-   
+   .header {
+    padding: 0;
+    margin:0 auto;
+    height:4.5rem;
+    width:80%;
+
+    border-bottom:1px solid white;
+
+
+}
+.header ul,li{
+    padding: 0;
+    margin:0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.header li{
+    position: relative;
+    float:left;
+}
+.header ul{
+    display:inline-block;
+    font-family:"宋体";
+    font-size:1.2rem;
+    width:32rem;
+    height:4rem;
+
+}
+
+.header li a{
+    width: 8rem;
+    height: 4rem;
+    color: #f0f0f0;
+    text-align: center;
+    line-height:4rem;
+
+}
+
+.header li a:hover{
+    color:white;
+    font-size:1.4rem;
+    cursor:pointer;
+}
+.header li .active{
+    color:white;
+    font-size:1.4rem;
+}
+.header li :last-child {
+    float:right;
+
+}
+#welcome{
+float:right;
+height:4rem;
+width:8rem;
+line-height:4rem;
+
+}
+#welcome span {
+text-align:center;
+font-size:.8rem;
+color:white;
+
+}
+.slogan{
+width:40rem;
+height:4rem;
+margin:150px auto;
+font-family: "微软雅黑";
+color: white;
+font-size: 4rem;
+text-align:center;
+z-index:100;
+}
+
+
+
+.search{
+        width: 40rem;
+        margin: 100px auto;
+        position: relative;
+        display: flex;
+}
+.search input{
+        float: left;
+        flex: 4;
+        height: 2.5rem;
+        outline: none;
+        padding-left: 15rem;
+}
+#b1{
+        float: right;
+        flex: 1;
+        height: 3rem;
+        width:10rem;
+        background-color: #990033;
+        color: white;
+        border-style: none;
+        border-radius: 10%;
+        outline: none;
+}
+.search button i{
+        font-style: normal;
+        font-size:1rem;
+        letter-spacing: .5rem;
+}
+
+
 </style>
 
 <body>
 <div class="header">
         <ul>
-            <li><a class="active">首页</a></li>      
+
+            <li><a class="active">首页</a></li>
             <li><a href="log.html">登录</a></li>
             <li><a href="register.html">注册</a></li>
             <li><a>个人中心</a></li>
@@ -32,11 +141,18 @@
 
  <div class="slogan">您的智能财务分析系统</div>
  <div class="search">
+     <div class="dropdown">
+         <button class="dropbtn">搜索类别</button>
+         <div class="dropdown-content">
+             <a>代码</a>
+             <a>关键字</a>
+         </div>
+     </div>
     <input type="text" placeholder="请输入..." name="" id="" value="" />
-    <button><i>搜索</i></button>
-</div>
-<div>
+    <button id="b1"><i>搜索</i></button>
+ </div>
 
-</div>
+<li class="routine">上证指数<span id="num1">1.67</span></li>
+<li class="routine">深证指数<span id="num2">33.44</span></li>
 </body>
 </html>

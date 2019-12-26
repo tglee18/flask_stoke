@@ -10,85 +10,434 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
-    <title>Title</title>
+    <title>资金流向</title>
     <style>
         body {
-             width:100%;
-            height:100%;
+            margin:0;
+            padding:0;
+            background: url("/static/image/background.jpg")
+            repeat 0px 0px fixed;
+            background-size:100% 100%;
+            z-index: -1;
         }
-        #container {
-            width:500px;
-            height:500px;
+        a {
+            text-decoration: none;
+        }
+        ul,li {
+            list-style: none;
+        }
+        #gen_ul {
+            margin:20px auto;
+            height: 60px;
+            width: 100%;
+            left:10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.2);
+
+        }
+        #gen_ul li {
+            width:120px;
+            height:100%;
+
+        }
+        #gen_ul li a {
+            display:inline-block;
+            width:100%;
+            height:60px;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+
+        }
+
+        #gen_ul li a:hover{
+            font-size:1.4rem;
+            background-color: rgba(0,0,0,0.2);
+            cursor:pointer;
+            visibility: visible;
+        }
+        #gen_ul  li a:active{
+            font-size:1.4rem;
+            background-color: rgba(0,0,0,0.2);
+        }
+        #gen_ul li .active {
+            font-size:1.4rem;
+            background-color: rgba(0,0,0,0.2);
+        }
+        #fond_flow :not(:first-child){
+            display:none;
+        }
+
+        #all {
+            margin:0 auto;
+            width:60%;
+            height:auto;
+        }
+        .container {
+            width: 100%;
+            background-color:#f8f8f8;
+            height:auto;
+            margin: 10px auto;
+            box-shadow: #666 0px 0px 15px; ;
+        }
+        .child_header {
+            width:80%;
+            height:70px;
+            margin:20px auto;
+            background-color: white;
+            box-shadow: #666 0px 0px 15px;
+        }
+        .child_header svg{
+            float:left;
+            width:40px;
+            height:40px;
+            margin:10px 15px;
+        }
+
+        #h2 {
+            float:left;
+            margin:15px .5rem;
+            font-size:1.25rem;
+            color:#34495e;
+            height:40px;
+            line-height: 40px;
+
+        }
+        .staff_table table {
+            margin-left:.5rem;
+
+        }
+        table {
+            border-collapse: collapse;
+            width:80%;
+            margin:10px auto;
+            padding:0;
+            margin-bottom:20px
+        }
+        td {
+
+            text-align: left;
+            padding:5px;
+            height:3rem;
+            //text-overflow: hidden;
+            border:1px solid #ccc;
+            background-color: white;
+
+        }
+
+        #tag {
+            width: 150px;
+        }
+
+
+        #staff_table #tag {
+            background-color:#34495e;
+            color:white;
+
+        }
+        #op{
+            width:8rem;
+            height:2rem;
+            background-color:#34495e;
+            color:white;
+            font-size: 1.2rem;
+            border-radius:5%;
+            display:inline-block;
+            text-align: center;
+            justify-content: center;
+            border:1px solid #ccc;
+            margin-left:20px;
+        }
+        #op1{
+            width:8rem;
+            height:2rem;
+            background-color:white;
+            color:#34495e;
+            font-size: 1.2rem;
+            border-radius:5%;
+            display:inline-block;
+            text-align: center;
+            justify-content: center;
+            border:1px solid #ccc;
+            margin-left:20px;
+            margin-top:10px;
+        }
+        #op2{
+            width:9rem;
+            height:2rem;
+            background-color:#34495e;
+            color:white;
+            font-size: 1.2rem;
+            border-radius:5%;
+            display:inline-block;
+            text-align: center;
+            justify-content: center;
+            border:1px solid #ccc;
+            margin-left:20px;
+            margin-top:10px;
+        }
+        #graph1{
+              margin-left: 20px;
+          }
+        #graph2{
+            margin-left: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="container"></div>
-<script>
-    var dom = document.getElementById("container");
-    var myChart = echarts.init(dom);
-    var app = {};
-    option = null;
-app.title = '正负条形图';
 
-option = {
-    tooltip : {
-        trigger: 'axis',
-        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-        }
-    },
-    legend: {
-        data:['净流入', '净流出', ]
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis : [
-        {
-            type : 'value'
-        }
-    ],
-    yAxis : [
-        {
-            type : 'category',
-            axisTick : {show: false},
-            data : ['小单','中单','大单']
-        }
-    ],
-    series : [
-        {
-            name:'净流入',
-            type:'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true
-                }
-            },
-            data:[320, 302, 341, 374, 390, 450, 420]
-        },
-        {
-            name:'净流出',
-            type:'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'left'
-                }
-            },
-            data:[-120, -132, -101, -134, -190, -230, -210]
-        }
-    ]
-};
-;
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
-</script>
+<div id="all">
+    <ul id="gen_ul">
+        <li><a href="comp_index.html">首页概览</a></li>
+        <ul id="fond_flow">
+            <li><a href="zijinliuxiang.html" class="active">资金流向</a></li>
+            <li><a class="son">资金流向</a></li>
+            <li><a class="son">历史交易数据</a></li>
+            <li><a class="son">历史资金流向</a></li>
+        </ul>
+        <li><a href="analysis.html">财务分析</a></li>
+        <li><a href="staff.html">股东股本</a></li>
+        <li><a href="company.html">公司简介</a></li>
+    </ul>
+    <div class="container">
+        <div class="head_tab"></div>
+        <div class="child_header">
+            <svg t="1576201622812" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1989" width="200" height="200"><path d="M557.29 99.39l-408.2-1a19.42 19.42 0 0 0-19.5 19.33v791.52a19.41 19.41 0 0 0 19.5 19.33l408.2 1a19.41 19.41 0 0 0 19.5-19.33V118.72a19.42 19.42 0 0 0-19.5-19.33z m-344.6 60.84a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m0 166.82a12 12 0 0 1 12.05-11.95h87.88a12 12 0 0 1 12 11.95V415a12 12 0 0 1-12 11.95h-87.88A12 12 0 0 1 212.69 415z m0 254.75v-87.94a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m204.12 347.09H289.57V694.17a12 12 0 0 1 12-11.95h103.19a12 12 0 0 1 12.05 11.95z m76.94-347.09a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94z m0-166.82a12 12 0 0 1-12 11.95h-87.92a12 12 0 0 1-12-11.95v-87.93a12 12 0 0 1 12-11.95h87.88a12 12 0 0 1 12 11.95z m0-166.81a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94zM895.37 310.65a17.28 17.28 0 0 0-17.3-17.2l-261-79.54a19.41 19.41 0 0 0-19.5 19.33v675a19.41 19.41 0 0 0 19.5 19.33l261.44 0.93A17.29 17.29 0 0 0 896 911.24z m-52.66 347.63a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z" p-id="1990"></path></svg>
+            <span id="h2">资金流向</span>
+    </div>
+        <span id="op">5日资金流向</span>
+        <div id="graph1" style="width:800px;height:400px;"></div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+        <script type="text/javascript">
+            var dom = document.getElementById("graph1");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = null;
+            app.title = '正负条形图';
+
+            option = {
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {
+                        type : 'shadow'
+                    }
+                },
+                legend: {
+                    data:[ '净流出', '净流入']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'category',
+                        axisTick : {show: false},
+                        data : ['12-16','12-13','12-11','12-10','12-9']
+                    }
+                ],
+                series : [
+
+                    {
+                        name:'净流入',
+                        type:'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true
+                            }
+                        },
+                        data:[320, 302, 341, 374, 390, 450, 420]
+                    },
+                    {
+                        name:'净流出',
+                        type:'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'left'
+                            }
+                        },
+                        data:[-120, -132, -101, -134, -190, -230, -210]
+                    }
+                ]
+            };
+            ;
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        </script>
+        <span id="op1">历史资金流向</span>
+        <div id="graph2" style="width:800px;height:400px;"></div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+        <script type="text/javascript">
+            var dom = document.getElementById("graph2");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = null;
+            app.title = '正负条形图';
+
+            option = {
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {
+                        type : 'shadow'
+                    }
+                },
+                legend: {
+                    data:[ '净流出', '净流入']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'category',
+                        axisTick : {show: false},
+                        data : ['12-16','12-13','12-11','12-10','12-9']
+                    }
+                ],
+                series : [
+
+                    {
+                        name:'净流入',
+                        type:'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true
+                            }
+                        },
+                        data:[320, 302, 341, 374, 390, 450, 420]
+                    },
+                    {
+                        name:'净流出',
+                        type:'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'left'
+                            }
+                        },
+                        data:[-120, -132, -101, -134, -190, -230, -210]
+                    }
+                ]
+            };
+            ;
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        </script>
+        <span id="op2">两市资金净流入</span>
+        <div id="graph3" style="width:800px;height:400px;"></div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+        <script type="text/javascript">
+            var dom = document.getElementById("graph3");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = null;
+            app.title = '正负条形图';
+
+            option = {
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {
+                        type : 'shadow'
+                    }
+                },
+                legend: {
+                    data:[ '净流出', '净流入']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'category',
+                        axisTick : {show: false},
+                        data : ['12-16','12-13','12-11','12-10','12-9']
+                    }
+                ],
+                series : [
+
+                    {
+                        name:'净流入',
+                        type:'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true
+                            }
+                        },
+                        data:[320, 302, 341, 374, 390, 450, 420]
+                    },
+                    {
+                        name:'净流出',
+                        type:'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'left'
+                            }
+                        },
+                        data:[-120, -132, -101, -134, -190, -230, -210]
+                    }
+                ]
+            };
+            ;
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        </script>
+    </div>
 </body>
 </html>

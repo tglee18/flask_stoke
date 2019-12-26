@@ -8,7 +8,7 @@ fininfo = Blueprint('fininfo', __name__)
 
 
 @fininfo.route('/')
-@is_login
+#@is_login
 def index():
     return render_template("fininfo.html")
 

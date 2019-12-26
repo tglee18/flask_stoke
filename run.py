@@ -9,9 +9,10 @@ from views.transactionData import transactionData
 from views.historyFundFlow import historyFundFlow
 from views.stockholder import stockholder
 from views.deal import deal
-
+from views.comp_index import comp_index
 # 将蓝图注册到app
 app.register_blueprint(analysis, url_prefix="/baseinfo")  # 公司基本信息
+app.register_blueprint(comp_index, url_prefix="/comp_index")  # 公司基本信息
 app.register_blueprint(login, url_prefix="/login")  # 登录验证
 app.register_blueprint(fininfo, url_prefix="/fininfo")  # 实时金融信息
 app.register_blueprint(historyTrade, url_prefix="/historyTrade")  # 历史交易记录
