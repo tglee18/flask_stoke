@@ -8,6 +8,6 @@ comp_index = Blueprint('comp_index', __name__)
 
 
 @comp_index.route('/')
-#@is_login
+# @is_login
 def index():
     return render_template("comp_index.html")

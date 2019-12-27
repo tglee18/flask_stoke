@@ -4,7 +4,6 @@ from flask import session, render_template
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-
 app = Flask(__name__)
 
 # url的格式为：数据库的协议：//用户名：密码@ip地址：端口号（默认可以不写）/数据库名
@@ -19,6 +18,8 @@ app.config['SECRET_KEY'] = 'test'  # 加密的密钥
 # app.config['SESSION_TYPE'] = 'redis'  # session类型为redis
 # app.config['SESSION_KEY_PREFIX'] = 'session:'  # 保存到session中的值的前缀
 app.config['PERMANENT_SESSION_LIFETIME'] = 1200  # 失效时间 秒
+
+
 # app.config['SESSION_REDIS'] = redis.Redis(host='127.0.0.1', port='6379', db=4)  # redis数据库连接
 
 
@@ -30,4 +31,5 @@ def is_login(func):
             return ret
         else:
             return render_template('login.html')
+
     return wrapper

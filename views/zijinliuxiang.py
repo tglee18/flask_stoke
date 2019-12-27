@@ -3,6 +3,7 @@ import requests
 from flask import render_template, request, Blueprint
 from config import db, is_login
 from bs4 import BeautifulSoup
+
 zijinliuxiang = Blueprint('zijinliuxiang', __name__)
 
 

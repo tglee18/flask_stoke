@@ -95,5 +95,3 @@ def get_data2():
     else:
         data_pkg = {"status": "failed"}
         return json.dumps(data_pkg)
-
-

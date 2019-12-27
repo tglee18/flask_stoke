@@ -8,7 +8,7 @@ deal = Blueprint('deal', __name__)
 
 
 @deal.route('/')
-#@is_login
+# @is_login
 def index():
     return render_template("deal.html")
 

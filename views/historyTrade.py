@@ -36,10 +36,11 @@ def get_history():
             code_new = '1' + code[2:]
 
         url = "http://quotes.money.163.com/service/chddata.html?code={}&start={}&end={" \
-              "}&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP".format(code_new, begin, end)
+              "}&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP".format(code_new,
+                                                                                                               begin,
+                                                                                                               end)
         data_pkg = {"status": "success",
                     "datas": url}
     else:
         data_pkg = {"status": "failed"}
     return json.dumps(data_pkg)
-

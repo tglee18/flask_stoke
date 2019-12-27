@@ -1,239 +1,253 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>首页-财务分析系统</title>
-	<meta charset="utf-8">
+    <title>首页-财务分析系统</title>
+    <meta charset="utf-8">
     <script type="text/javascript" src="/static/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/static/index1/index1.js"></script>
 
 </head>
 <style>
     body {
-        margin:0;
-        padding:0;
-        background: url("../static/image/background.jpg")
-	            repeat 0px 0px fixed;
-        background-size:100% 100%;
-	    z-index: -1;
+        margin: 0;
+        padding: 0;
+        background: url("../static/image/background.jpg") repeat 0px 0px fixed;
+        background-size: 100% 100%;
+        z-index: -1;
     }
-   .header {
-    padding: 0;
-    margin:0 auto;
-    height:4.5rem;
-    width:80%;
 
-    border-bottom:1px solid white;
+    .header {
+        padding: 0;
+        margin: 0 auto;
+        height: 4.5rem;
+        width: 80%;
 
-
-}
-.header ul,li{
-    padding: 0;
-    margin:0;
-    list-style: none;
-}
-a {
-    text-decoration: none;
-}
-.header li{
-    position: relative;
-    float:left;
-}
-.header ul{
-    display:inline-block;
-    font-family:"宋体";
-    font-size:1.2rem;
-    width:32rem;
-    height:4rem;
-
-}
-
-.header li a{
-    width: 8rem;
-    height: 4rem;
-    color: #f0f0f0;
-    text-align: center;
-    line-height:4rem;
-
-}
-
-.header li a:hover{
-    color:white;
-    font-size:1.4rem;
-    cursor:pointer;
-}
-.header li .active{
-    color:white;
-    font-size:1.4rem;
-}
-.header li :last-child {
-    float:right;
-
-}
-#welcome{
-float:right;
-height:4rem;
-width:8rem;
-line-height:4rem;
-
-}
-#welcome span {
-text-align:center;
-font-size:.8rem;
-color:white;
-
-}
-.slogan{
-width:40rem;
-height:4rem;
-margin:150px auto;
-font-family: "微软雅黑";
-color: white;
-font-size: 4rem;
-text-align:center;
-z-index:100;
-}
+        border-bottom: 1px solid white;
 
 
+    }
 
-.search{
-        width: 40rem;
-        margin: 100px auto;
+    .header ul, li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .header li {
         position: relative;
-        display: flex;
-}
-.search input{
         float: left;
-        flex: 4;
+    }
+
+    .header ul {
+        display: inline-block;
+        font-family: "宋体";
+        font-size: 1.2rem;
+        width: 32rem;
+        height: 4rem;
+
+    }
+
+    .header li a {
+        width: 8rem;
+        height: 4rem;
+        color: #f0f0f0;
+        text-align: center;
+        line-height: 4rem;
+
+    }
+
+    .header li a:hover {
+        color: white;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .header li .active {
+        color: white;
+        font-size: 1.4rem;
+    }
+
+    .header li :last-child {
+        float: right;
+
+    }
+
+    #welcome {
+        float: right;
+        height: 4rem;
+        width: 8rem;
+        line-height: 4rem;
+
+    }
+
+    #welcome span {
+        text-align: center;
+        font-size: .8rem;
+        color: white;
+
+    }
+
+    .slogan {
+        width: 40rem;
+        height: 4rem;
+        margin: 150px auto;
+        font-family: "微软雅黑";
+        color: white;
+        font-size: 4rem;
+        text-align: center;
+        z-index: 100;
+    }
+
+
+    .search {
+        width: 60rem;
+        margin: 100px auto;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .search input {
+        width: 25rem;
         height: 2.5rem;
         outline: none;
-        padding-left: 15rem;
-}
-#b1{
-        float: right;
-        flex: 1;
-         margin-left:20px;
+        margin-left: 10px;
+        border-radius: 5px;
+    }
+
+    #b1 {
+
+        margin-left: 20px;
         height: 3rem;
-        width:10rem;
+        width: 8rem;
         background-color: #990033;
         color: white;
         border-style: none;
-        border-radius: 10%;
+        border-radius: 10px;
+        outline: none
+    }
+
+    #b1:hover {
+        cursor: pointer
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .routine {
+        margin-left: 80%;
+        width: 20rem;
+        height: 4rem;
+        background: rgba(0, 0, 0, 0.5);
+        font-size: 1.1rem;
+        font-family: "微软雅黑 Light";
+        color: whitesmoke;
+        text-indent: .1rem;
+    }
+
+    #num1 {
+    {#color:red;#} font-size: 1.3rem;
+        margin-left: 2rem;
+
+    }
+
+    #num2 {
+    {#color:limegreen;#} font-size: 1.3rem;
+        margin-left: 2rem;
+    }
+
+    .dropbtn {
+        float: left;
+        background-color: white;
+        color: black;
+        padding: 6px;
+        font-size: 16px;
+        font-family: "微软雅黑 Light";
+        border-radius: 5%;
+        cursor: pointer;
+        width: 5.2rem;
+        height: 2.8rem;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 60px;
+    }
+
+    .dropdown-content {
+
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: whitesmoke;
+    }
+
+    select {
         outline: none;
-}
-.search button i{
-        font-style: normal;
-        font-size:1rem;
-        letter-spacing: .5rem;
-}
-*{
-	margin:0;
-	padding:0;
-}
-
-.routine{
-    margin-left:80%;
-    width:20rem;
-    height:4rem;
-    background:rgba(0,0,0,0.5);
-    font-size:1.1rem;
-    font-family: "微软雅黑 Light";
-    color:whitesmoke;
-    text-indent: .1rem;
-}
-#num1{
-    {#color:red;#}
-    font-size:1.3rem;
-    margin-left:2rem;
-
-}
-#num2{
-    {#color:limegreen;#}
-    font-size:1.3rem;
-    margin-left:2rem;
-}
-.dropbtn {
-    float:left;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    font-size: 16px;
-    font-family: "微软雅黑 Light";
-    border-radius: 5%;
-    cursor: pointer;
-    width:5.2rem;
-    height:2.8rem;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    width:100px;
-    height:60px;
-}
-
-.dropdown-content {
-
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: whitesmoke;
-}
-select {
-    outline:none;
-    float:left;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    font-size: 16px;
-    font-family: "微软雅黑 Light";
-    border-radius: 5%;
-    cursor: pointer;
-    width:5.2rem;
-    height:2.8rem;
-}
+        float: left;
+        background-color: white;
+        color: black;
+        padding: 6px;
+        font-size: 16px;
+        font-family: "微软雅黑 Light";
+        border-radius: 5%;
+        cursor: pointer;
+        width: 5.2rem;
+        height: 2.8rem;
+    }
 </style>
 
 <body>
 <div class="header">
-        <ul>
+    <ul>
 
-            <li><a class="active">首页</a></li>
-            <li><a href="log.html">登录</a></li>
-            <li><a href="register.html">注册</a></li>
-            <li><a>个人中心</a></li>
-        </ul>
-        <div id="welcome"><span >欢迎</span><i class="iconfont &#xe6c8;"></i></div>
+        <li><a class="active">首页</a></li>
+        <li><a href="log.html">登录</a></li>
+        <li><a href="register.html">注册</a></li>
+        <li><a>个人中心</a></li>
+    </ul>
+    <div id="welcome"><span>欢迎</span><i class="iconfont &#xe6c8;"></i></div>
 </div>
 
- <div class="slogan">您的智能财务分析系统</div>
- <div class="search">
-     <div class="dropdown">
+<div class="slogan">您的智能财务分析系统</div>
+<div class="search">
+    <div class="dropdown">
 
-         <select class="dropdown-content">
-             <option value="code">代码</option>
-             <option value="key">关键字</option>
-         </select>
-     </div>
-    <input type="text" placeholder="请输入..." name="" id="stoke_code" value="" />
+        <select class="dropdown-content">
+            <option value="code">代码</option>
+            <option value="key">关键字</option>
+        </select>
+    </div>
+    <input type="text" placeholder="请输入..." name="" id="stoke_code" value=""/>
     <button id="b1">搜索</button>
- </div>
+</div>
 
 <li class="routine">上证指数<span id="num1"></span></li>
 <li class="routine">深证成指<span id="num2"></span></li>

@@ -2,174 +2,193 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <script src="/static/jquery-3.4.1.min.js"></script>
+    <script src="/static/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/static/company/company.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../static/index/index1.css">
     <title>company</title>
     <style>
-    body {
-        margin:0;
-        padding:0;
-        background: url("/static/image/background.jpg")
-        repeat 0px 0px fixed;
-        background-size:100% 100%;
-        z-index: -1;
-    }
-    a {
-        text-decoration: none;
-    }
-    ul,li {
-      list-style: none;
-   }
-   .container {
-    width: 100%;
-    background-color:#f8f8f8;
-    height:auto;
-    margin: 10px auto;
-    box-shadow: #666 0px 0px 15px;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("/static/image/background.jpg") repeat 0px 0px fixed;
+            background-size: 100% 100%;
+            z-index: -1;
+        }
 
-.base_intro {
-    width:80%;
-    background-color:#34495e;
-    height:auto;
-    color:white;
-    margin: 20px auto;
-    display:none;
-}
+        a {
+            text-decoration: none;
+        }
 
-.base_intro #name {
-    width:100%;
-    height:auto;
-    font-size: 1.25rem;
-    text-indent: .5rem;
-    padding-top:10px;
-    color:white;
+        ul, li {
+            list-style: none;
+        }
 
-}
+        .container {
+            width: 100%;
+            background-color: #f8f8f8;
+            height: auto;
+            margin: 10px auto;
+            box-shadow: #666 0px 0px 15px;
+        }
 
- #content  {
-    padding-bottom:20px;
+        .base_intro {
+            width: 80%;
+            background-color: #34495e;
+            height: auto;
+            color: white;
+            margin: 20px auto;
+            display: none;
+        }
 
-}
-#content span {
-    color:#eee;
-    margin:10px;
-    text-indent:1rem;
-}
-#content p {
-    color:grey;
-    margin:10px;
-    text-indent: .5rem;
-}
-#h2 {
-    float:left;
-    margin:15px .5rem;
-    font-size:1.25rem;
-    color:#34495e;
-    height:40px;
-    line-height: 40px;
+        .base_intro #name {
+            width: 100%;
+            height: auto;
+            font-size: 1.25rem;
+            text-indent: .5rem;
+            padding-top: 10px;
+            color: white;
 
-}
-.base_table table {
-    margin-left:.5rem;
+        }
 
-}
-.child_header {
-    width:80%;
-    height:70px;
-    margin:20px auto;
-    background-color: white;
-    box-shadow: #666 0px 0px 15px;
-}
-.child_header svg{
-    float:left;
-    width:40px;
-    height:40px;
-    margin:10px 15px;
-}
+        #content {
+            padding-bottom: 20px;
 
-table {
-    border-collapse: collapse;
-    width:80%;
-    margin:0 auto;
-    padding:0;
+        }
 
-}
- td {
-    text-align: left;
-    padding:5px;
-    height:3rem;
-     width:300px;
-    overflow: hidden;
-    border:1px solid #ccc;
-    background-color:white;
-}
-#tag {
-    background-color:#34495e;
-    color:white;
-    width: 150px;
+        #content span {
+            color: #eee;
+            margin: 10px;
+            text-indent: 1rem;
+        }
 
- }
+        #content p {
+            color: grey;
+            margin: 10px;
+            text-indent: .5rem;
+        }
 
-#all {
-    margin:0 auto;
-    width:60%;
-    height:auto;
-}
+        #h2 {
+            float: left;
+            margin: 15px .5rem;
+            font-size: 1.25rem;
+            color: #34495e;
+            height: 40px;
+            line-height: 40px;
 
-#gen_ul {
-    margin:20px auto;
-    height: 60px;
-    width: 100%;
-    left:10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: rgba(0,0,0,0.2);
+        }
 
-}
-#gen_ul li {
-    width:120px;
-    height:100%;
+        .base_table table {
+            margin-left: .5rem;
 
-}
-#gen_ul li a {
-    display: inline-block;
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    color: white;
+        }
 
-}
-#gen_ul li a:hover{
-        font-size:1.4rem;
-        background-color: rgba(0,0,0,0.2);
-        cursor:pointer;
-}
-#gen_ul li .active {
-    font-size:1.4rem;
-    background-color: rgba(0,0,0,0.2);
-}
-#gen_ul  li a:active{
-    font-size:1.4rem;
-    background-color: rgba(0,0,0,0.2);
-    }
-#fond_flow :not(:first-child){
-    display:none;
-}
-    #fond_flow1 :not(:first-child){
-        display:none;
-    }
-    #fond_flow1:hover{
-        display:block;
-    }
-.son{
-    background-color: rgba(0,0,0,0.3);
-}
-</style>
+        .child_header {
+            width: 80%;
+            height: 70px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: #666 0px 0px 15px;
+        }
+
+        .child_header svg {
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin: 10px 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            padding: 0;
+
+        }
+
+        td {
+            text-align: left;
+            padding: 5px;
+            height: 3rem;
+            width: 300px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        #tag {
+            background-color: #34495e;
+            color: white;
+            width: 150px;
+
+        }
+
+        #all {
+            margin: 0 auto;
+            width: 60%;
+            height: auto;
+        }
+
+        #gen_ul {
+            margin: 20px auto;
+            height: 60px;
+            width: 100%;
+            left: 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.2);
+
+        }
+
+        #gen_ul li {
+            width: 120px;
+            height: 100%;
+
+        }
+
+        #gen_ul li a {
+            display: inline-block;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+
+        }
+
+        #gen_ul li a:hover {
+            font-size: 1.4rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #gen_ul li .active {
+            font-size: 1.4rem;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #gen_ul li a:active {
+            font-size: 1.4rem;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #fond_flow :not(:first-child) {
+            display: none;
+        }
+
+        #fond_flow1 :not(:first-child) {
+            display: none;
+        }
+
+        #fond_flow1:hover {
+            display: block;
+        }
+
+        .son {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
 
@@ -178,7 +197,7 @@ table {
         <li><a href="comp_index.html">首页概览</a></li>
         <ul id="fond_flow">
             <li><a href="zijinliuxiang">资金流向</a></li>
-             <li><a class="son">资金流向</a></li>
+            <li><a class="son">资金流向</a></li>
             <li><a class="son">历史交易数据</a></li>
             <li><a class="son">历史资金流向</a></li>
         </ul>
@@ -187,7 +206,7 @@ table {
             <li><a class="son">主要财务指标</a></li>
         </ul>
         <li><a href="staff.html">股东股本</a></li>
-         <li><a href="company.html" class="active">公司简介</a></li>
+        <li><a href="company.html" class="active">公司简介</a></li>
     </ul>
 
     <div class="base_intro">
@@ -202,119 +221,123 @@ table {
     </div>
     <div>
         <div class="container">
-        <div class="head_tab"></div>
-        <div class="table">
-            <div class="child_header">
-                <svg t="1576201622812" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1989" width="200" height="200"><path d="M557.29 99.39l-408.2-1a19.42 19.42 0 0 0-19.5 19.33v791.52a19.41 19.41 0 0 0 19.5 19.33l408.2 1a19.41 19.41 0 0 0 19.5-19.33V118.72a19.42 19.42 0 0 0-19.5-19.33z m-344.6 60.84a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m0 166.82a12 12 0 0 1 12.05-11.95h87.88a12 12 0 0 1 12 11.95V415a12 12 0 0 1-12 11.95h-87.88A12 12 0 0 1 212.69 415z m0 254.75v-87.94a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m204.12 347.09H289.57V694.17a12 12 0 0 1 12-11.95h103.19a12 12 0 0 1 12.05 11.95z m76.94-347.09a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94z m0-166.82a12 12 0 0 1-12 11.95h-87.92a12 12 0 0 1-12-11.95v-87.93a12 12 0 0 1 12-11.95h87.88a12 12 0 0 1 12 11.95z m0-166.81a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94zM895.37 310.65a17.28 17.28 0 0 0-17.3-17.2l-261-79.54a19.41 19.41 0 0 0-19.5 19.33v675a19.41 19.41 0 0 0 19.5 19.33l261.44 0.93A17.29 17.29 0 0 0 896 911.24z m-52.66 347.63a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z" p-id="1990"></path></svg>
-                <span id="h2">工商注册</span>
+            <div class="head_tab"></div>
+            <div class="table">
+                <div class="child_header">
+                    <svg t="1576201622812" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                         xmlns="http://www.w3.org/2000/svg" p-id="1989" width="200" height="200">
+                        <path d="M557.29 99.39l-408.2-1a19.42 19.42 0 0 0-19.5 19.33v791.52a19.41 19.41 0 0 0 19.5 19.33l408.2 1a19.41 19.41 0 0 0 19.5-19.33V118.72a19.42 19.42 0 0 0-19.5-19.33z m-344.6 60.84a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m0 166.82a12 12 0 0 1 12.05-11.95h87.88a12 12 0 0 1 12 11.95V415a12 12 0 0 1-12 11.95h-87.88A12 12 0 0 1 212.69 415z m0 254.75v-87.94a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m204.12 347.09H289.57V694.17a12 12 0 0 1 12-11.95h103.19a12 12 0 0 1 12.05 11.95z m76.94-347.09a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94z m0-166.82a12 12 0 0 1-12 11.95h-87.92a12 12 0 0 1-12-11.95v-87.93a12 12 0 0 1 12-11.95h87.88a12 12 0 0 1 12 11.95z m0-166.81a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94zM895.37 310.65a17.28 17.28 0 0 0-17.3-17.2l-261-79.54a19.41 19.41 0 0 0-19.5 19.33v675a19.41 19.41 0 0 0 19.5 19.33l261.44 0.93A17.29 17.29 0 0 0 896 911.24z m-52.66 347.63a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z"
+                              p-id="1990"></path>
+                    </svg>
+                    <span id="h2">工商注册</span>
+                </div>
+                <table id="base_table">
+                    <tr>
+                        <td id="tag">公司名称</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">英文名称</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">曾用名</td>
+                        <td colspan="3"></td>
+                    </tr>
+
+                    <tr>
+                        <td id="tag">A股代码</td>
+                        <td></td>
+                        <td id="tag">A股简称</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td id="tag">B股代码</td>
+                        <td></td>
+                        <td id="tag">B股简称</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">H股代码</td>
+                        <td>4500万</td>
+                        <td id="tag">H股简称</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">证券类别</td>
+                        <td></td>
+                        <td id="tag">所属行业</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">上市交易所</td>
+                        <td></td>
+                        <td id="tag">所属证监会行业</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">联系电话</td>
+                        <td></td>
+                        <td id="tag">电子信箱</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">传真</td>
+                        <td></td>
+                        <td id="tag">公司网址</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">办公地址</td>
+                        <td></td>
+                        <td id="tag">注册地址</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">区域</td>
+                        <td></td>
+                        <td id="tag">邮政编码</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">注册资本</td>
+                        <td></td>
+                        <td id="tag">工商登记</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">雇员人数</td>
+                        <td></td>
+                        <td id="tag">管理人员人数</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">律师事务所</td>
+                        <td></td>
+                        <td id="tag">会计师事务所</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">公司简介</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td id="tag">经营范围</td>
+                        <td colspan="3"></td>
+                    </tr>
+                </table>
+
             </div>
-            <table id="base_table">
-                <tr>
-                    <td id="tag">公司名称</td>
-                    <td colspan="3"></td>
-                </tr>
-                <tr>
-                    <td id="tag">英文名称</td>
-                    <td colspan="3"> </td>
-                </tr>
-                <tr>
-                    <td id="tag">曾用名</td>
-                    <td colspan="3"></td>
-                </tr>
-
-                <tr>
-                    <td id="tag">A股代码</td>
-                    <td></td>
-                    <td id="tag">A股简称</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td id="tag">B股代码</td>
-                    <td></td>
-                    <td id="tag">B股简称</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">H股代码</td>
-                    <td>4500万</td>
-                    <td id="tag">H股简称</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">证券类别</td>
-                    <td></td>
-                    <td id="tag">所属行业</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">上市交易所</td>
-                    <td></td>
-                    <td id="tag">所属证监会行业</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">联系电话</td>
-                    <td></td>
-                    <td id="tag">电子信箱</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">传真</td>
-                    <td></td>
-                    <td id="tag">公司网址</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">办公地址</td>
-                    <td></td>
-                    <td id="tag">注册地址</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">区域</td>
-                    <td></td>
-                    <td id="tag">邮政编码</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">注册资本</td>
-                    <td></td>
-                    <td id="tag">工商登记</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">雇员人数</td>
-                    <td></td>
-                    <td id="tag">管理人员人数</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">律师事务所</td>
-                    <td></td>
-                    <td id="tag">会计师事务所</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td id="tag">公司简介</td>
-                    <td colspan="3"></td>
-                </tr>
-                <tr>
-                    <td id="tag">经营范围</td>
-                    <td colspan="3"></td>
-                </tr>
-            </table>
-
         </div>
-    </div>
     </div>
 </div>
 </body>
 <script>
-    $("#fond_flow").mouseover(function(){
-        $("#fond_flow :not(:first-child)").css("display","block");
+    $("#fond_flow").mouseover(function () {
+        $("#fond_flow :not(:first-child)").css("display", "block");
     });
-     $("#fond_flow").mouseout(function(){
-        $("#fond_flow :not(:first-child)").css("display","none");
+    $("#fond_flow").mouseout(function () {
+        $("#fond_flow :not(:first-child)").css("display", "none");
     });
 
 </script>

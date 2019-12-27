@@ -1,4 +1,4 @@
- $(document).ready(function () {
+$(document).ready(function () {
     $.ajax({
         url: "/moneyFlow/get_moneyFlow",
         type: "GET",
@@ -307,7 +307,7 @@
         data: {stokeCode: "000001"},
         dataType: "text",
         success: function (data) {
-           $('#table1').html(data);
+            $('#table1').html(data);
         }
     });
     $.ajax({
@@ -319,4 +319,4 @@
             $('#table2').html(data);
         }
     });
- })
+})

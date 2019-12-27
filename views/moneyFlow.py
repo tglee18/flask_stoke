@@ -49,4 +49,3 @@ def get_data():
     req = requests.get(url, headers)
     json_response = req.content.decode()  # 获取r的文本 就是一个json字符串
     return json_response
-
