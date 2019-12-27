@@ -9,32 +9,74 @@
         <style>
             body {
                 padding:0;
-                margin:0
+                margin:0;
+                background: url("../static/image/background.jpg")
+	            repeat 0px 0px fixed;
+                background-size:100% 100%;
+	            z-index: -1;
             }
-           .bk1 {
-               position:fixed;
-               width:100%;
-               height:50%;
-               top:0;
-           }
-           .bk2 {
-               position:fixed;
-               width:100%;
-               height:50%;
-               top:50%;
-               bottom:0;
-               background-color:#34495e;
-               z-index:-1;
-           }
+            .header {
+    padding: 0;
+    margin:0 auto;
+    height:4.5rem;
+    width:80%;
+
+    border-bottom:1px solid white;
+
+
+}
+.header ul,li{
+    padding: 0;
+    margin:0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.header li{
+    position: relative;
+    float:left;
+}
+.header ul{
+    display:inline-block;
+    font-family:"宋体";
+    font-size:1.2rem;
+    width:32rem;
+    height:4rem;
+
+}
+
+.header li a{
+    width: 8rem;
+    height: 4rem;
+    color: #f0f0f0;
+    text-align: center;
+    line-height:4rem;
+
+}
+
+.header li a:hover{
+    color:white;
+    font-size:1.4rem;
+    cursor:pointer;
+}
+.header li .active{
+    color:white;
+    font-size:1.4rem;
+}
+.header li :last-child {
+    float:right;
+
+}
 
             .content {
-
-                background-color: white;
+                background-color: rgba(0,0,0,0.5);
                 height:470px;
                 width:500px;
                 margin:50px auto;
                 box-shadow:#666 0px 0px 20px; 
                 z-index:10000;
+                color:white;
             }
            .image {
                height:190px;
@@ -47,7 +89,7 @@
                width:150px;
                margin-top:40px;
                margin-left:20px;
-              
+                color:white;
            }
             .log {
                 display:flex;

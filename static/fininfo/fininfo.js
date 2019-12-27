@@ -23,7 +23,8 @@ $(function () {
                      window.localStorage.setItem('comp_fininfo',json_string);
                      //data1= window.localStorage.getItem('data');
                      //console.log(data1);
-                    location.href = '/comp_info/';
+                    location.href = '/comp_index';
+
                 }
             });
         }

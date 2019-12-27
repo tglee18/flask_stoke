@@ -10,6 +10,8 @@ from views.historyFundFlow import historyFundFlow
 from views.stockholder import stockholder
 from views.deal import deal
 from views.comp_index import comp_index
+from views.index import indexSet
+
 # 将蓝图注册到app
 app.register_blueprint(analysis, url_prefix="/baseinfo")  # 公司基本信息
 app.register_blueprint(comp_index, url_prefix="/comp_index")  # 公司基本信息
@@ -22,7 +24,7 @@ app.register_blueprint(historyFundFlow, url_prefix="/historyFundFlow")  # 历史
 app.register_blueprint(moneyFlow, url_prefix="/moneyFlow")  # 详细资金流向
 app.register_blueprint(stockholder, url_prefix="/stockholder")  #内部持股
 app.register_blueprint(deal, url_prefix="/deal")    #买卖表（买一，卖一）
-
+app.register_blueprint(indexSet, url_prefix="/")
 
 if __name__ == '__main__':
     app.run()

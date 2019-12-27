@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <script src="/static/jquery-3.4.1.min.js"></script>
     <script src="/static/echarts.min.js"></script>
-    <script type="text/javascript" src="/static/company/company.js"></script>
+    <script type="text/javascript" src="/static/comp_info/comp_info.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../static/index/index1.css">
     <title>comp</title>
@@ -132,9 +132,10 @@
        float:left;
        margin-top:0;
        margin-left:10%;
-       height:2.8rem;
-       width:80px;
+       height:3rem;
+       width:120px;
         margin-bottom:20px;
+       background-color:rgba(0,0,0,0.5)
    }
      #fininfo {
          float:left;
@@ -148,7 +149,7 @@
          height:1.4rem;
          width:14.3%;
          font-size:.8rem;
-         border:none;
+
      }
     </style>
     <body>
@@ -157,21 +158,21 @@
     </div>
     <table id="fininfo">
         <tr id="tr1">
-            <td rowspan="2"></td>
-            <td></td>
-            <td>今开：</td>
-            <td>最高：</td>
-            <td>成交量：</td>
-            <td>流通市值：</td>
-            <td>52周最高：</td>
+            <td rowspan="2"><span></span></td>
+            <td>变化量：<span></span></td>
+            <td>今开：<span></span></td>
+            <td>最高：<span></span></td>
+            <td>成交量：<span></span></td>
+            <td>52周最高：<span></span></td>
+            <td>市盈率：<span></span></td>
         </tr>
          <tr id="tr2">
-            <td></td>
-            <td>昨收：</td>
-            <td>最低：</td>
-            <td>成交额：</td>
-            <td>市盈率：</td>
-            <td>52周最低：</td>
+            <td><span></span></td>
+            <td>昨收：<span></span></td>
+            <td>最低：<span></span></td>
+            <td>成交额：<span></span></td>
+            <td>52周最低：<span></span></td>
+            <td>流通市值：<span></span></td>
         </tr>
     </table>
      <div id="all">
@@ -201,28 +202,28 @@
         <table class="table2">
             <tr>
                 <td>卖一</td>
-                <td></td>
-                <td></td>
+                <td class="price1"></td>
+                <td class="num1"></td>
             </tr>
             <tr>
                 <td>卖二</td>
-                <td></td>
-                <td></td>
+                <td class="price1"></td>
+                <td class="num1"></td>
             </tr>
             <tr>
                 <td>卖三</td>
-                <td></td>
-                <td></td>
+                <td class="price1"></td>
+                <td class="num1"></td>
             </tr>
             <tr>
                 <td>卖四</td>
-                <td></td>
-                <td></td>
+                <td class="price1"></td>
+                <td class="num1"></td>
             </tr>
             <tr>
                 <td>卖五</td>
-                <td></td>
-                <td></td>
+                <td class="price1"></td>
+                <td class="num1"></td>
             </tr>
         </table>
             <div id="dangqianjia" class="four">
@@ -233,28 +234,28 @@
             <table class="table2">
             <tr>
                 <td>买一</td>
-                <td></td>
-                <td></td>
+                <td class="price2"></td>
+                <td class="num2"></td>
             </tr>
             <tr>
                 <td>买二</td>
-                <td></td>
-                <td></td>
+                <td class="price2"></td>
+                <td class="num2"></td>
             </tr>
             <tr>
                 <td>买三</td>
-                <td></td>
-                <td></td>
+                <td class="price2"></td>
+                <td class="num2"></td>
             </tr>
             <tr>
                 <td>买四</td>
-                <td></td>
-                <td></td>
+                <td class="price2"></td>
+                <td class="num2"></td>
             </tr>
             <tr>
                 <td>买五</td>
-                <td></td>
-                <td></td>
+                <td class="price2"></td>
+                <td class="num2"></td>
             </tr>
         </table>
             <div id="pan" class="four">
