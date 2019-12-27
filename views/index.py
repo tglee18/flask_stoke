@@ -18,3 +18,8 @@ def index():
 def get_detail():
     return render_template("detail.html")
 
+
+@indexSet.route('/company')
+#@is_login
+def toCompany():
+    return render_template("company.html")
