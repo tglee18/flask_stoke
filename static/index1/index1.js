@@ -5,7 +5,7 @@ $(function () {
     var RequestUtils = {
         //{#绑定界面的按钮事件#}
         initBind: function () {
-            $("#b1").on("click", function () {
+            $("#b1").click(function () {
                 console.log($(".dropdown-content option:selected").val())
                 RequestUtils.get_info();
             });
