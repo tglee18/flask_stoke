@@ -12,3 +12,7 @@ indexSet = Blueprint('index', __name__)
 def index():
     return render_template("index1.html")
 
+@indexSet.route('/detail')
+#@is_login
+def get_detail():
+    return render_template("detail.html")

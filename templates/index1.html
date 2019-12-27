@@ -3,7 +3,7 @@
 <head>
 	<title>首页-财务分析系统</title>
 	<meta charset="utf-8">
-
+    <script type="text/javascript" src="/static/index1/index1.js"></script>
 
 </head>
 <style>
@@ -166,10 +166,12 @@ margin-left:2rem;
 .dropdown {
     position: relative;
     display: inline-block;
+    width:100px;
+    height:60px;
 }
 
 .dropdown-content {
-    display: none;
+
     position: absolute;
     background-color: #f9f9f9;
     min-width: 100px;
@@ -192,7 +194,19 @@ margin-left:2rem;
 .dropdown:hover .dropbtn {
     background-color: whitesmoke;
 }
-
+select {
+    outline:none;
+    float:left;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    font-size: 16px;
+    font-family: "微软雅黑 Light";
+    border-radius: 5%;
+    cursor: pointer;
+    width:5.2rem;
+    height:2.8rem;
+}
 </style>
 
 <body>
@@ -210,14 +224,14 @@ margin-left:2rem;
  <div class="slogan">您的智能财务分析系统</div>
  <div class="search">
      <div class="dropdown">
-         <button class="dropbtn">搜索类别</button>
-         <div class="dropdown-content">
-             <a>代码</a>
-             <a>关键字</a>
-         </div>
+
+         <select class="dropdown-content">
+             <option value="code">代码</option>
+             <option value="key">关键字</option>
+         </select>
      </div>
-    <input type="text" placeholder="请输入..." name="" id="" value="" />
-    <button id="b1"><i>搜索</i></button>
+    <input type="text" placeholder="请输入..." name="" id="stoke_code" value="" />
+    <button id="b1">搜索</button>
  </div>
 
 <li class="routine">上证指数<span id="num1">1.67</span></li>

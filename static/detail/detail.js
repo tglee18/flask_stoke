@@ -1,6 +1,6 @@
 $(function() {
     let li = "";
-    data_string =window.localStorage.getItem('data');
+    data_string =window.localStorage.getItem('comp_key');
    // console.log(data_string);
     list=JSON.parse(data_string);
     console.log(list);
