@@ -11,9 +11,9 @@ login = Blueprint('login', __name__)
 def logins():
     if request.method == 'GET':
         if session.get("username"):
-            return render_template('baseinfo.html')    #这里是跳转到搜索页
+            return render_template('index1.html')    #这里是跳转到搜索页
         else:
-            return render_template('login.html')
+            return render_template('log.html')
     else:
         user_id = request.form.get('id')
         pwd = request.form.get('pwd')

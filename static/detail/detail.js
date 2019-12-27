@@ -5,7 +5,7 @@ $(function() {
     list=JSON.parse(data_string);
     console.log(list);
     $.each(list, function (index, array) {
-        li += "<li><span class='span_mark'>"+index+"</span><div id='name'>" + list[index].gsmc + "<p>"+list[index].ywmc+"</p></div><div id='content'><p id='zjl'>法人代表：" +list[index].zjl+ "</p><p id='fxfy'>注册资本："+list[index].fxfy+"</p><p id= 'wsfxrq'>成立日期："+list[index].wsfxrq+"</p><p id='bgdz'>地址："+list[index].bgdz+"</p></div></li>";
+        li += "<li><span class='span_mark' style='display:none'>"+index+"</span><div id='name'>" + list[index].gsmc + "<p>"+list[index].ywmc+"</p></div><div id='content'><p id='zjl'>法人代表：" +list[index].zjl+ "</p><p id='fxfy'>注册资本："+list[index].fxfy+"</p><p id= 'wsfxrq'>成立日期："+list[index].wsfxrq+"</p><p id='bgdz'>地址："+list[index].bgdz+"</p></div></li>";
 
     });
     console.log(li);

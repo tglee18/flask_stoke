@@ -20,10 +20,10 @@ $(function () {
                     console.log(data);
                     let json_string=JSON.stringify(data);
                      //console.log(json_string);
-                     window.localStorage.setItem('comp_fininfo',json_string);
+                     // window.localStorage.setItem('comp_fininfo',json_string);
                      //data1= window.localStorage.getItem('data');
                      //console.log(data1);
-                    location.href = '/comp_index';
+                    // location.href = '/comp_index';
 
                 }
             });

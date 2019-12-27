@@ -91,3 +91,28 @@ def get_data():
     else:
         data_pkg = {"status": "failed"}
     return json.dumps(data_pkg)
+
+
+@fininfo.route('/get_tsz', methods=["GET"])
+def get_tsz():
+    shangz = "http://api.money.126.net/data/feed/1399001,1399300,0000001,HSRANK_COUNT_SHA,HSRANK_COUNT_SZA,HSRANK_COUNT_SH3"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36'
+    }
+    response = requests.get(shangz, headers)
+    response.encoding = 'utf-8'
+    html = response.text
+    html = html[20:]
+    html = html.strip().strip('();')
+    dict_json = json.loads(html)
+    index_shen = dict_json["1399001"]["price"];
+    shen_updown = dict_json["1399001"]["updown"];
+    index_shang = dict_json["0000001"]["price"];
+    shang_updown = dict_json["0000001"]["updown"];
+    dict_json = {"shangzheng":index_shang,
+                 "shangUpDown": shang_updown,
+                 "shenzheng":index_shen,
+                 "shenUpDown": shen_updown,}
+    return json.dumps(dict_json)
+
+
