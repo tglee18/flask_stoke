@@ -73,6 +73,7 @@
     }
 
     #all {
+
         margin: 0 auto;
         width: 60%;
         height: auto;
@@ -84,6 +85,7 @@
         height: auto;
         margin: 10px auto;
         box-shadow: #666 0px 0px 15px;;
+        padding-bottom:20px;
     }
 
     .child_header {
@@ -113,6 +115,7 @@
 
     .staff_table table {
         margin-left: .5rem;
+        margin-bottom:20px
 
     }
 
@@ -124,84 +127,58 @@
         margin-bottom: 20px
     }
 
-    td {
+   td {
+    width:25%;
+    text-align: center;
+    padding:5px;
+    height:3rem;
+    text-overflow: hidden;
+    border:1px solid #ccc;
+    background-color: white;
 
-        text-align: left;
-        padding: 5px;
-        height: 3rem;
-        text-overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: white;
-
-    }
-
-    #tag {
-        width: 150px;
-    }
+}
 
 
-    #staff_table #tag {
-        background-color: #34495e;
-        color: white;
 
-    }
+#staff_table #tag td{
+    background-color:#34495e;
+    color:white;
+
+ }
 </style>
 <body>
-<div id="all">
-    <ul id="gen_ul">
-        <li><a href="comp_index.html">首页概览</a></li>
-        <ul id="fond_flow">
-            <li><a href="zijinliuxiang.html">资金流向</a></li>
-            <li><a class="son">资金流向</a></li>
-            <li><a class="son">历史交易数据</a></li>
-            <li><a class="son">历史资金流向</a></li>
-        </ul>
-        <li><a href="analysis.html">财务分析</a></li>
-        <li><a class="active" href="staff.html">股东股本</a></li>
-        <li><a href="company.html">公司简介</a></li>
-    </ul>
-    <div class="container">
-        <div class="head_tab"></div>
-        <div class="child_header">
-            <svg t="1576201622812" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                 p-id="1989" width="200" height="200">
-                <path d="M557.29 99.39l-408.2-1a19.42 19.42 0 0 0-19.5 19.33v791.52a19.41 19.41 0 0 0 19.5 19.33l408.2 1a19.41 19.41 0 0 0 19.5-19.33V118.72a19.42 19.42 0 0 0-19.5-19.33z m-344.6 60.84a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m0 166.82a12 12 0 0 1 12.05-11.95h87.88a12 12 0 0 1 12 11.95V415a12 12 0 0 1-12 11.95h-87.88A12 12 0 0 1 212.69 415z m0 254.75v-87.94a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m204.12 347.09H289.57V694.17a12 12 0 0 1 12-11.95h103.19a12 12 0 0 1 12.05 11.95z m76.94-347.09a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94z m0-166.82a12 12 0 0 1-12 11.95h-87.92a12 12 0 0 1-12-11.95v-87.93a12 12 0 0 1 12-11.95h87.88a12 12 0 0 1 12 11.95z m0-166.81a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94zM895.37 310.65a17.28 17.28 0 0 0-17.3-17.2l-261-79.54a19.41 19.41 0 0 0-19.5 19.33v675a19.41 19.41 0 0 0 19.5 19.33l261.44 0.93A17.29 17.29 0 0 0 896 911.24z m-52.66 347.63a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z"
-                      p-id="1990"></path>
-            </svg>
-            <span id="h2">主要人员</span>
+
+        <div id="all">
+                <ul id="gen_ul">
+                    <li><a href="/comp_index">首页概览</a></li>
+                    <ul id="fond_flow">
+                        <li><a href="/zijinliuxiang">资金流向</a></li>
+                         <li><a class="son">资金流向</a></li>
+                        <li><a class="son">历史交易数据</a></li>
+                        <li><a class="son">历史资金流向</a></li>
+                    </ul>
+                    <li><a href="/analysis">财务分析</a></li>
+                    <li><a class="active" href="staff.html">股东股本</a></li>
+                     <li><a href="/company">公司简介</a></li>
+                </ul>
+                <div class="container">
+                        <div class="head_tab"></div>
+                            <div class="child_header">
+                                <svg t="1576201622812" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1989" width="200" height="200"><path d="M557.29 99.39l-408.2-1a19.42 19.42 0 0 0-19.5 19.33v791.52a19.41 19.41 0 0 0 19.5 19.33l408.2 1a19.41 19.41 0 0 0 19.5-19.33V118.72a19.42 19.42 0 0 0-19.5-19.33z m-344.6 60.84a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m0 166.82a12 12 0 0 1 12.05-11.95h87.88a12 12 0 0 1 12 11.95V415a12 12 0 0 1-12 11.95h-87.88A12 12 0 0 1 212.69 415z m0 254.75v-87.94a12 12 0 0 1 12.05-11.94h87.88a12 12 0 0 1 12 11.94v87.94a12 12 0 0 1-12 11.94h-87.88a12 12 0 0 1-12.05-11.94z m204.12 347.09H289.57V694.17a12 12 0 0 1 12-11.95h103.19a12 12 0 0 1 12.05 11.95z m76.94-347.09a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94z m0-166.82a12 12 0 0 1-12 11.95h-87.92a12 12 0 0 1-12-11.95v-87.93a12 12 0 0 1 12-11.95h87.88a12 12 0 0 1 12 11.95z m0-166.81a12 12 0 0 1-12 11.94h-87.92a12 12 0 0 1-12-11.94v-87.94a12 12 0 0 1 12-11.94h87.88a12 12 0 0 1 12 11.94zM895.37 310.65a17.28 17.28 0 0 0-17.3-17.2l-261-79.54a19.41 19.41 0 0 0-19.5 19.33v675a19.41 19.41 0 0 0 19.5 19.33l261.44 0.93A17.29 17.29 0 0 0 896 911.24z m-52.66 347.63a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z m0-119.74a5.88 5.88 0 0 1-5.89 5.84h-180a5.88 5.88 0 0 1-5.89-5.84v-30.73a5.88 5.88 0 0 1 5.89-5.84h180a5.88 5.88 0 0 1 5.89 5.84z" p-id="1990"></path></svg>
+                                <span id="h2">主要人员</span>
+                            </div>
+
+
+             <table id="staff_table">
+                    <tr id="tag">
+                        <td>姓名</td>
+                        <td>职位</td>
+                         <td>持股数量</td>
+                         <td>最后变动日期</td>
+                    </tr>
+
+            </table>
+            </div>
         </div>
-
-
-        <table id="staff_table">
-            <tr>
-                <td id="tag">总经理</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td id="tag">法人代表</td>
-                <td></td>
-            </tr>
-            <td id="tag">董秘</td>
-            <td></td>
-
-            </tr>
-
-            <tr>
-                <td id="tag">董事长</td>
-                <td></td>
-
-            </tr>
-            <tr>
-
-                <td id="tag">证券事务代表</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td id="tag">独立董事</td>
-                <td></td>
-            </tr>
-        </table>
-    </div>
-</div>
 </body>
 </html>

@@ -25,7 +25,12 @@ var RequestUtils = {
             data: {text: $("#stoke_code").val()},
             dataType: "json",
             success: function (data) {
-                console.log(data)
+                console.log(data);
+                let json_string=JSON.stringify(data.datas);
+                     //console.log(json_string);
+                     window.localStorage.setItem('staff_info',json_string);
+                     //console.log(data1);
+                     location.href = '/staff';
             }
         });
     },
