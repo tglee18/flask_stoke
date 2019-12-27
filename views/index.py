@@ -23,3 +23,8 @@ def get_detail():
 # @is_login
 def toCompany():
     return render_template("company.html")
+
+@indexSet.route('/staff')
+# @is_login
+def toStaff():
+    return render_template("staff.html")
