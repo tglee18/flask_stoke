@@ -11,7 +11,7 @@ login = Blueprint('login', __name__)
 def logins():
     if request.method == 'GET':
         if session.get("username"):
-            return render_template('index1.html')    #这里是跳转到搜索页
+            return render_template('index1.html')  # 这里是跳转到搜索页
         else:
             return render_template('log.html')
     else:
@@ -26,4 +26,3 @@ def logins():
         else:
             datas = {"statuss": "failed"}
             return json.dumps(datas)
-

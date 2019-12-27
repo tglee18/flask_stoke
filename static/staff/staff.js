@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     info_string = window.localStorage.getItem("company_info");
 
     company_info = JSON.parse(info_string);
@@ -9,7 +9,7 @@ $(function() {
 
     }
     console.log(info_arr);
-         $("td").not("#tag").each(function (index, element) {
-            $(element).text(info_arr[index + 13]);
+    $("td").not("#tag").each(function (index, element) {
+        $(element).text(info_arr[index + 13]);
     });
 });

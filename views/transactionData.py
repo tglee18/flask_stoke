@@ -17,8 +17,8 @@ def index():
 def get_data():
     q_text = request.args.get("text")
     data = db.session.execute("select * "
-                                  "from baseinfo "
-                                  "where Code like '%{}'".format(q_text))
+                              "from baseinfo "
+                              "where Code like '%{}'".format(q_text))
 
     data_list = list(data)
     if data_list:
@@ -60,8 +60,8 @@ def get_data():
 def get_data2():
     q_text = request.args.get("text")
     data = db.session.execute("select * "
-                                  "from baseinfo "
-                                  "where Code like '%{}'".format(q_text))
+                              "from baseinfo "
+                              "where Code like '%{}'".format(q_text))
 
     data_list = list(data)
     if data_list:

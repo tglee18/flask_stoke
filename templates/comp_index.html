@@ -10,349 +10,367 @@
     <title>comp</title>
     <style>
         body {
-            margin:0;
-            padding:0;
-            background: url("/static/image/background.jpg")
-	            repeat 0px 0px fixed;
-            background-size:100% 100%;
-	        z-index: -1;
+            margin: 0;
+            padding: 0;
+            background: url("/static/image/background.jpg") repeat 0px 0px fixed;
+            background-size: 100% 100%;
+            z-index: -1;
         }
+
         #all {
-            margin:0 auto;
-            width:80%;
-            height:auto;
-            
+            margin: 0 auto;
+            width: 80%;
+            height: auto;
+
         }
-       #gen_ul {
-        margin:20px auto;
 
-        height: 60px;
-        width: 100%;
-        left:10%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: rgba(0,0,0,0.2);
+        #gen_ul {
+            margin: 20px auto;
 
-    }
-    #gen_ul li {
-        width:120px;
-        height:100%;
+            height: 60px;
+            width: 100%;
+            left: 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.2);
 
-    }
-    #gen_ul li a {
-        display:inline-block;
-        width:100%;
-        height:60px;
-        text-align: center;
-        line-height: 60px;
-        color: white;
-
-    }
-
-    #gen_ul li a:hover{
-        font-size:1.4rem;
-        background-color: rgba(0,0,0,0.2);
-        cursor:pointer;
-    }
-    #gen_ul  li a:active{
-        font-size:1.4rem;
-        background-color: rgba(0,0,0,0.2);
-    }
-    #gen_ul li .active {
-        font-size:1.4rem;
-        background-color: rgba(0,0,0,0.2);
-    }
-    #fond_flow :not(:first-child){
-        display:none;
         }
-    #container {
-        margin-top:20px;
-        margin-left:10%;
-        width:60%;
-        height:600px;
-        float:left;
-    }
-    
-    table {
-        background-color:rgba(0,0,0,0.5); 
-        border-collapse: collapse;
-        width:20%;
-        height:auto;
-        margin:0 auto;
-        margin-right:20px;
-        padding:0;
-        float:right;
-        color:white;
-    }
-    .table2 tr:hover {
-        background-color:rgba(169,169,169,0.5); 
-        cursor:pointer;
-    }
-    td {
-        text-align: left;
-        padding:5px;
-        height:2rem;
-        width:33.33333333%;
-        overflow: hidden;
-        border:1px solid grey;
-            
-    }
-    th {
-        text-align: left;
-        padding:5px;
-        height:2rem;
-        width:25%;
-        overflow: hidden;
-        border:1px solid grey;
-        background-color:white;
-        font-size:1rem;
-    }
-    .four{
-        background-color:rgba(0,0,0,0.5); 
-        color:white;
-        width:20%;
-        height:2rem;
-        margin-right:20px;
-        margin-top:0;
-        padding:0;
-        float:right;
-        display:flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    .four:hover {
-        background-color:rgba(169,169,169,0.5); 
-        cursor:pointer;
-    }
-    #wei {
-        margin-top:20px;
-    }
-   #comp_name {
-       float:left;
-       margin-top:0;
-       margin-left:10%;
-       height:3rem;
-       width:120px;
-        margin-bottom:20px;
-       background-color:rgba(0,0,0,0.5)
-   }
-     #fininfo {
-         float:left;
-         margin-left:0;
-         margin-bottom:20px;
-         width:70%;
-         height:auto;
 
-     }
-     #fininfo td{
-         height:1.4rem;
-         width:14.3%;
-         font-size:.8rem;
+        #gen_ul li {
+            width: 120px;
+            height: 100%;
 
-     }
+        }
+
+        #gen_ul li a {
+            display: inline-block;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+
+        }
+
+        #gen_ul li a:hover {
+            font-size: 1.4rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #gen_ul li a:active {
+            font-size: 1.4rem;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #gen_ul li .active {
+            font-size: 1.4rem;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #fond_flow :not(:first-child) {
+            display: none;
+        }
+
+        #container {
+            margin-top: 20px;
+            margin-left: 10%;
+            width: 60%;
+            height: 600px;
+            float: left;
+        }
+
+        table {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-collapse: collapse;
+            width: 20%;
+            height: auto;
+            margin: 0 auto;
+            margin-right: 20px;
+            padding: 0;
+            float: right;
+            color: white;
+        }
+
+        .table2 tr:hover {
+            background-color: rgba(169, 169, 169, 0.5);
+            cursor: pointer;
+        }
+
+        td {
+            text-align: left;
+            padding: 5px;
+            height: 2rem;
+            width: 33.33333333%;
+            overflow: hidden;
+            border: 1px solid grey;
+
+        }
+
+        th {
+            text-align: left;
+            padding: 5px;
+            height: 2rem;
+            width: 25%;
+            overflow: hidden;
+            border: 1px solid grey;
+            background-color: white;
+            font-size: 1rem;
+        }
+
+        .four {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 20%;
+            height: 2rem;
+            margin-right: 20px;
+            margin-top: 0;
+            padding: 0;
+            float: right;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .four:hover {
+            background-color: rgba(169, 169, 169, 0.5);
+            cursor: pointer;
+        }
+
+        #wei {
+            margin-top: 20px;
+        }
+
+        #comp_name {
+            float: left;
+            margin-top: 0;
+            margin-left: 10%;
+            height: 3rem;
+            width: 120px;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+
+        #fininfo {
+            float: left;
+            margin-left: 0;
+            margin-bottom: 20px;
+            width: 70%;
+            height: auto;
+
+        }
+
+        #fininfo td {
+            height: 1.4rem;
+            width: 14.3%;
+            font-size: .8rem;
+
+        }
     </style>
-    <body>
-    <div id="comp_name">
+<body>
+<div id="comp_name">
+
+</div>
+<table id="fininfo">
+    <tr id="tr1">
+        <td rowspan="2"><span></span></td>
+        <td>变化量：<span></span></td>
+        <td>今开：<span></span></td>
+        <td>最高：<span></span></td>
+        <td>成交量：<span></span></td>
+        <td>52周最高：<span></span></td>
+        <td>市盈率：<span></span></td>
+    </tr>
+    <tr id="tr2">
+        <td><span></span></td>
+        <td>昨收：<span></span></td>
+        <td>最低：<span></span></td>
+        <td>成交额：<span></span></td>
+        <td>52周最低：<span></span></td>
+        <td>流通市值：<span></span></td>
+    </tr>
+</table>
+<div id="all">
+    <ul id="gen_ul">
+        <li><a>首页概览</a></li>
+        <ul id="fond_flow">
+            <li><a href="zijinliuxiang.html">资金流向</a></li>
+            <li><a>资金流向</a></li>
+            <li><a>历史交易数据</a></li>
+            <li><a>历史资金流向</a></li>
+        </ul>
+
+        <li><a href="analysis.html">财务分析</a></li>
+        <li><a href="staff.html">股东股本</a></li>
+        <li><a href="company.html" class="active">公司简介</a></li>
+    </ul>
+    <div id="container">
 
     </div>
-    <table id="fininfo">
-        <tr id="tr1">
-            <td rowspan="2"><span></span></td>
-            <td>变化量：<span></span></td>
-            <td>今开：<span></span></td>
-            <td>最高：<span></span></td>
-            <td>成交量：<span></span></td>
-            <td>52周最高：<span></span></td>
-            <td>市盈率：<span></span></td>
+
+    <div class="four" id="wei">
+        <span>委比：</span>
+        <span></span>
+        <span>委差：</span>
+        <span></span>
+    </div>
+    <table class="table2">
+        <tr>
+            <td>卖一</td>
+            <td class="price1"></td>
+            <td class="num1"></td>
         </tr>
-         <tr id="tr2">
-            <td><span></span></td>
-            <td>昨收：<span></span></td>
-            <td>最低：<span></span></td>
-            <td>成交额：<span></span></td>
-            <td>52周最低：<span></span></td>
-            <td>流通市值：<span></span></td>
+        <tr>
+            <td>卖二</td>
+            <td class="price1"></td>
+            <td class="num1"></td>
+        </tr>
+        <tr>
+            <td>卖三</td>
+            <td class="price1"></td>
+            <td class="num1"></td>
+        </tr>
+        <tr>
+            <td>卖四</td>
+            <td class="price1"></td>
+            <td class="num1"></td>
+        </tr>
+        <tr>
+            <td>卖五</td>
+            <td class="price1"></td>
+            <td class="num1"></td>
         </tr>
     </table>
-     <div id="all">
-        <ul id="gen_ul">
-            <li><a>首页概览</a></li>
-            <ul id="fond_flow">
-                <li><a href="zijinliuxiang.html">资金流向</a></li>
-                 <li><a>资金流向</a></li>
-                <li><a>历史交易数据</a></li>
-                <li><a>历史资金流向</a></li>
-            </ul>
-    
-            <li><a href="analysis.html">财务分析</a></li>
-            <li><a href="staff.html">股东股本</a></li>
-             <li><a href="company.html" class="active">公司简介</a></li>
-        </ul>
-        <div id="container">
+    <div id="dangqianjia" class="four">
+        <span>当前价:</span>
+        <span></span>
 
-        </div>
-        
-       <div class="four" id="wei">
-           <span>委比：</span>
-           <span></span>
-           <span>委差：</span>
-           <span></span>
-       </div>
-        <table class="table2">
-            <tr>
-                <td>卖一</td>
-                <td class="price1"></td>
-                <td class="num1"></td>
-            </tr>
-            <tr>
-                <td>卖二</td>
-                <td class="price1"></td>
-                <td class="num1"></td>
-            </tr>
-            <tr>
-                <td>卖三</td>
-                <td class="price1"></td>
-                <td class="num1"></td>
-            </tr>
-            <tr>
-                <td>卖四</td>
-                <td class="price1"></td>
-                <td class="num1"></td>
-            </tr>
-            <tr>
-                <td>卖五</td>
-                <td class="price1"></td>
-                <td class="num1"></td>
-            </tr>
-        </table>
-            <div id="dangqianjia" class="four">
-                <span>当前价:</span>
-                <span></span>
-                
-            </div>
-            <table class="table2">
-            <tr>
-                <td>买一</td>
-                <td class="price2"></td>
-                <td class="num2"></td>
-            </tr>
-            <tr>
-                <td>买二</td>
-                <td class="price2"></td>
-                <td class="num2"></td>
-            </tr>
-            <tr>
-                <td>买三</td>
-                <td class="price2"></td>
-                <td class="num2"></td>
-            </tr>
-            <tr>
-                <td>买四</td>
-                <td class="price2"></td>
-                <td class="num2"></td>
-            </tr>
-            <tr>
-                <td>买五</td>
-                <td class="price2"></td>
-                <td class="num2"></td>
-            </tr>
-        </table>
-            <div id="pan" class="four">
-                <span>外盘：</span>
-                <span></span>
-                <span>内盘：</span>
-                <span></span>
-            </div>    
     </div>
-    <script>
-        var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-function randomData() {
-    now = new Date(+now + oneDay);
-    value = value + Math.random() * 21 - 10;
-    return {
-        name: now.toString(),
-        value: [
-            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-            Math.round(value)
-        ]
+    <table class="table2">
+        <tr>
+            <td>买一</td>
+            <td class="price2"></td>
+            <td class="num2"></td>
+        </tr>
+        <tr>
+            <td>买二</td>
+            <td class="price2"></td>
+            <td class="num2"></td>
+        </tr>
+        <tr>
+            <td>买三</td>
+            <td class="price2"></td>
+            <td class="num2"></td>
+        </tr>
+        <tr>
+            <td>买四</td>
+            <td class="price2"></td>
+            <td class="num2"></td>
+        </tr>
+        <tr>
+            <td>买五</td>
+            <td class="price2"></td>
+            <td class="num2"></td>
+        </tr>
+    </table>
+    <div id="pan" class="four">
+        <span>外盘：</span>
+        <span></span>
+        <span>内盘：</span>
+        <span></span>
+    </div>
+</div>
+<script>
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+
+    function randomData() {
+        now = new Date(+now + oneDay);
+        value = value + Math.random() * 21 - 10;
+        return {
+            name: now.toString(),
+            value: [
+                [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+                Math.round(value)
+            ]
+        }
     }
-}
 
-var data = [];
-var now = +new Date(1997, 9, 3);
-var oneDay = 24 * 3600 * 1000;
-var value = Math.random() * 1000;
-for (var i = 0; i < 1000; i++) {
-    data.push(randomData());
-}
-
-option = {
-    title: {
-        text: '股票数据'
-    },
-    tooltip: {
-        trigger: 'axis',
-        formatter: function (params) {
-            params = params[0];
-            var date = new Date(params.name);
-            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-        },
-        axisPointer: {
-            animation: false
-        }
-    },
-    xAxis: {
-       
-        type: 'time',
-        axisLine:{
-            lineStyle:{
-                color:'#ddd',
-            }
-        },
-        splitLine: {
-            show: false
-        }
-    },
-    yAxis: {
-        type: 'value',
-        boundaryGap: [0, '100%'],
-        axisLine:{
-            lineStyle:{
-                color:'#ddd',
-            }
-        },
-        splitLine: {
-            show: false
-        }
-    },
-    series: [{
-        name: '模拟数据',
-        type: 'line',
-        showSymbol: false,
-        hoverAnimation: false,
-        data: data
-    }]
-};
-
-setInterval(function () {
-
-    for (var i = 0; i < 5; i++) {
-        data.shift();
+    var data = [];
+    var now = +new Date(1997, 9, 3);
+    var oneDay = 24 * 3600 * 1000;
+    var value = Math.random() * 1000;
+    for (var i = 0; i < 1000; i++) {
         data.push(randomData());
     }
 
-    myChart.setOption({
+    option = {
+        title: {
+            text: '股票数据'
+        },
+        tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+                params = params[0];
+                var date = new Date(params.name);
+                return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+            },
+            axisPointer: {
+                animation: false
+            }
+        },
+        xAxis: {
+
+            type: 'time',
+            axisLine: {
+                lineStyle: {
+                    color: '#ddd',
+                }
+            },
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%'],
+            axisLine: {
+                lineStyle: {
+                    color: '#ddd',
+                }
+            },
+            splitLine: {
+                show: false
+            }
+        },
         series: [{
+            name: '模拟数据',
+            type: 'line',
+            showSymbol: false,
+            hoverAnimation: false,
             data: data
         }]
-    });
-}, 1000);;
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
-    </script>
-    </body>
+    };
+
+    setInterval(function () {
+
+        for (var i = 0; i < 5; i++) {
+            data.shift();
+            data.push(randomData());
+        }
+
+        myChart.setOption({
+            series: [{
+                data: data
+            }]
+        });
+    }, 1000);
+    ;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+</body>

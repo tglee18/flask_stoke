@@ -7,168 +7,184 @@
     <script src="/static/register/register.js"></script>
     <style>
         body {
-                padding:0;
-                margin:0;
-                background: url("../static/image/background.jpg")
-	            repeat 0px 0px fixed;
-                background-size:100% 100%;
-	            z-index: -1;
-            }
-            .header {
-                padding: 0;
-                margin:0 auto;
-                height:4.5rem;
-                width:80%;
-                border-bottom:1px solid white;
+            padding: 0;
+            margin: 0;
+            background: url("../static/image/background.jpg") repeat 0px 0px fixed;
+            background-size: 100% 100%;
+            z-index: -1;
+        }
+
+        .header {
+            padding: 0;
+            margin: 0 auto;
+            height: 4.5rem;
+            width: 80%;
+            border-bottom: 1px solid white;
 
 
-}
-.header ul,li{
-    padding: 0;
-    margin:0;
-    list-style: none;
-}
-a {
-    text-decoration: none;
-}
-.header li{
-    position: relative;
-    float:left;
-}
-.header ul{
-    display:inline-block;
-    font-family:"宋体";
-    font-size:1.2rem;
-    width:32rem;
-    height:4rem;
+        }
 
-}
+        .header ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
 
-.header li a{
-    width: 8rem;
-    height: 4rem;
-    color: #f0f0f0;
-    text-align: center;
-    line-height:4rem;
+        a {
+            text-decoration: none;
+        }
 
-}
+        .header li {
+            position: relative;
+            float: left;
+        }
 
-.header li a:hover{
-    color:white;
-    font-size:1.4rem;
-    cursor:pointer;
-}
-.header li .active{
-    color:white;
-    font-size:1.4rem;
-}
-.header li :last-child {
-    float:right;
+        .header ul {
+            display: inline-block;
+            font-family: "宋体";
+            font-size: 1.2rem;
+            width: 32rem;
+            height: 4rem;
 
-}
-#welcome{
-float:right;
-height:4rem;
-width:8rem;
-line-height:4rem;
+        }
 
-}
-#welcome span {
-text-align:center;
-font-size:.8rem;
-color:white;
+        .header li a {
+            width: 8rem;
+            height: 4rem;
+            color: #f0f0f0;
+            text-align: center;
+            line-height: 4rem;
 
-}
+        }
+
+        .header li a:hover {
+            color: white;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .header li .active {
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .header li :last-child {
+            float: right;
+
+        }
+
+        #welcome {
+            float: right;
+            height: 4rem;
+            width: 8rem;
+            line-height: 4rem;
+
+        }
+
+        #welcome span {
+            text-align: center;
+            font-size: .8rem;
+            color: white;
+
+        }
+
         .content {
-                background-color: rgba(0,0,0,0.5);
-                height:500px;
-                width:500px;
-                margin:50px auto;
-                box-shadow:#666 0px 0px 20px;
-                z-index:10000;
-                color:white;
-            }
-           .image {
-               height:190px;
-               width:190px;
-               margin:10px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 500px;
+            width: 500px;
+            margin: 50px auto;
+            box-shadow: #666 0px 0px 20px;
+            z-index: 10000;
+            color: white;
+        }
 
-           }
-           svg {
-               height:150px;
-               width:150px;
-               margin-top:40px;
-               margin-left:20px;
+        .image {
+            height: 190px;
+            width: 190px;
+            margin: 10px auto;
 
-           }
-            .register {
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
-                height:300px;
-                width:500px;
-                margin:0 auto;
+        }
+
+        svg {
+            height: 150px;
+            width: 150px;
+            margin-top: 40px;
+            margin-left: 20px;
+
+        }
+
+        .register {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 300px;
+            width: 500px;
+            margin: 0 auto;
 
 
-            }
-            input {
-                background-color:#eee;
-                height:40px;
-                width:350px;
-                border-style: none;
-                border-bottom:1px #000055;
-                border-radius: 10px;
-                outline: none;
+        }
 
-                margin-left:6px
-            }
+        input {
+            background-color: #eee;
+            height: 40px;
+            width: 350px;
+            border-style: none;
+            border-bottom: 1px #000055;
+            border-radius: 10px;
+            outline: none;
 
-            #register {
-                display:block;
-                margin:10px auto;
-                border-style: none;
-                width:350px;
-                height:40px;
-                border-radius: 5px;
-                background-color:#000055;
-                 color:white;
-                letter-spacing: .5rem;
-                cursor: pointer;
+            margin-left: 6px
+        }
 
-            }
-        form span{
-            margin-bottom:20px;
-            margin-left:30px
+        #register {
+            display: block;
+            margin: 10px auto;
+            border-style: none;
+            width: 350px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #000055;
+            color: white;
+            letter-spacing: .5rem;
+            cursor: pointer;
+
+        }
+
+        form span {
+            margin-bottom: 20px;
+            margin-left: 30px
 
         }
 
     </style>
 </head>
 <body>
-        <div class="header">
-                <ul>
-                        <li><a href="index1.html">首页</a></li>
-                        <li><a class="active" href="log.html">登录</a></li>
-                        <li><a href="register.html">注册</a></li>
-                        <li><a>个人中心</a></li>
-                </ul>
-                <div id="welcome"><span >欢迎</span><i class="iconfont &#xe6c8;"></i></div>
-        </div>
-         <div class="content">
-                <div class="image">
-                        <svg t="1573980361102" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2050" width="200" height="200">
-                            <path d="M512 512C606.229333 512 682.666667 435.498667 682.666667 341.333333 682.666667 247.125333 606.229333 170.666667 512 170.666667 417.792 170.666667 341.333333 247.125333 341.333333 341.333333 341.333333 435.498667 417.792 512 512 512ZM512 597.333333C398.229333 597.333333 170.666667 654.293333 170.666667 768L170.666667 853.333333 853.333333 853.333333 853.333333 768C853.333333 654.293333 625.792 597.333333 512 597.333333Z" p-id="2051" fill="#ddd">
+<div class="header">
+    <ul>
+        <li><a href="index1.html">首页</a></li>
+        <li><a class="active" href="log.html">登录</a></li>
+        <li><a href="register.html">注册</a></li>
+        <li><a>个人中心</a></li>
+    </ul>
+    <div id="welcome"><span>欢迎</span><i class="iconfont &#xe6c8;"></i></div>
+</div>
+<div class="content">
+    <div class="image">
+        <svg t="1573980361102" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             p-id="2050" width="200" height="200">
+            <path d="M512 512C606.229333 512 682.666667 435.498667 682.666667 341.333333 682.666667 247.125333 606.229333 170.666667 512 170.666667 417.792 170.666667 341.333333 247.125333 341.333333 341.333333 341.333333 435.498667 417.792 512 512 512ZM512 597.333333C398.229333 597.333333 170.666667 654.293333 170.666667 768L170.666667 853.333333 853.333333 853.333333 853.333333 768C853.333333 654.293333 625.792 597.333333 512 597.333333Z"
+                  p-id="2051" fill="#ddd">
 
-                            </path>
-                        </svg>
-                </div>
-                <form class="register" action="/register" method="post">
-                        <span>用户昵称:<input id="username"></span>
-                        <span>输入密码:<input id="password" type="password"></span>
-                        <span>确认密码:<input id="password2" type="password"><br></span>
-                        <input id="register" type="button" value="注册">
+            </path>
+        </svg>
+    </div>
+    <form class="register" action="/register" method="post">
+        <span>用户昵称:<input id="username"></span>
+        <span>输入密码:<input id="password" type="password"></span>
+        <span>确认密码:<input id="password2" type="password"><br></span>
+        <input id="register" type="button" value="注册">
 
-                </form>
-         </div>
+    </form>
+</div>
 </body>
 </html>

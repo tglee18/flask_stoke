@@ -9,16 +9,20 @@ $(function () {
     var companyID = getUrlParam('compID');
     var info_arr = [];
     $.ajax({
+
+
         url: "/baseinfo/get_baseinfo",
         type: "GET",
-        data: {type: "code",
-            text: companyID},
-        dataType:"json",
+        data: {
+            type: "code",
+            text: companyID
+        },
+        dataType: "json",
         success: function (data) {
-           for (let i in data.datas[0]) {
-               info_arr.push(data.datas[0][i]);
-           }
-           $("td").not("#tag").each(function (index, element) {
+            for (let i in data.datas[0]) {
+                info_arr.push(data.datas[0][i]);
+            }
+            $("td").not("#tag").each(function (index, element) {
                 if (index < 3) {
                     $(element).text(info_arr[index + 1]);
                 }

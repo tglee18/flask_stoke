@@ -8,18 +8,18 @@ indexSet = Blueprint('index', __name__)
 
 
 @indexSet.route('/')
-#@is_login
+# @is_login
 def index():
     return render_template("index1.html")
 
 
 @indexSet.route('/detail')
-#@is_login
+# @is_login
 def get_detail():
     return render_template("detail.html")
 
 
 @indexSet.route('/company')
-#@is_login
+# @is_login
 def toCompany():
     return render_template("company.html")

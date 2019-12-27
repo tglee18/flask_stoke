@@ -8,7 +8,7 @@ fininfo = Blueprint('fininfo', __name__)
 
 
 @fininfo.route('/')
-#@is_login
+# @is_login
 def index():
     return render_template("fininfo.html")
 
@@ -81,13 +81,13 @@ def get_data():
             "low": low,  # 最低
             "volume": volume,  # 成交量
             "turnover": turnover,  # 成交额
-            "highest": highest,  #52周最高
-            "lowest": lowest,  #52周最低
-            "syl": syl,  #市盈率
-            "ltsz": ltsz  #流通市值
+            "highest": highest,  # 52周最高
+            "lowest": lowest,  # 52周最低
+            "syl": syl,  # 市盈率
+            "ltsz": ltsz  # 流通市值
         }
         data_pkg = {"status": "success",
-                     "datas": base_data}
+                    "datas": base_data}
     else:
         data_pkg = {"status": "failed"}
     return json.dumps(data_pkg)
@@ -109,10 +109,8 @@ def get_tsz():
     shen_updown = dict_json["1399001"]["updown"];
     index_shang = dict_json["0000001"]["price"];
     shang_updown = dict_json["0000001"]["updown"];
-    dict_json = {"shangzheng":index_shang,
+    dict_json = {"shangzheng": index_shang,
                  "shangUpDown": shang_updown,
-                 "shenzheng":index_shen,
-                 "shenUpDown": shen_updown,}
+                 "shenzheng": index_shen,
+                 "shenUpDown": shen_updown, }
     return json.dumps(dict_json)
-
-
