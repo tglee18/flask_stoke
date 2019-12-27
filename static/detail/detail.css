@@ -39,8 +39,17 @@ font-size:.8rem;
 #com_general li :hover {
     cursor:pointer;
 }
-
-
+#svg {
+    float:left;
+    width:50px;
+    height:100%;
+}
+svg {
+    width:40px;
+    height:40px;
+    margin-top:10px;
+    margin-left:5px;
+}
  #com_general li :first-child {
     top:20px;
 }
@@ -59,6 +68,7 @@ font-size:.8rem;
 }
 #com_general li  #content  {
     padding-bottom:20px;
+    margin-left:50px
 }
 #com_general li  #content p {
 
