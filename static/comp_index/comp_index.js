@@ -14,35 +14,31 @@ $(function () {
     $('#compAnalysis').attr('href','/analysis?compID='+companyID);
     $('#compStockHolder').attr('href','/staff?compID='+companyID);
     $('#compInfo').attr('href','/company?compID='+companyID);
-    var info_arr = [];
+    //渲染图像到图表
     $.ajax({
         url: "/baseinfo/get_baseinfo",
         type: "GET",
         data: {
-            type: "code",
             text: companyID
         },
         dataType: "json",
         success: function (data) {
-            for (let i in data.datas[0]) {
-                info_arr.push(data.datas[0][i]);
-            }
-            $("td").not("#tag").each(function (index, element) {
-                if (index < 3) {
-                    $(element).text(info_arr[index + 1]);
-                }
-                if (index === 3) {
-                    $(element).text(info_arr[0]);
-                }
-                if (3 < index < 13) {
-                    $(element).text(info_arr[index]);
-                }
-                if (index >= 13) {
-                    $(element).text(info_arr[index + 6]);
-                }
-            });
+
+
         }
     });
+    //插入数据到表
+    $.ajax({
+        url: "/baseinfo/get_baseinfo",
+        type: "GET",
+        data: {
+            text: companyID
+        },
+        dataType: "json",
+        success: function (data) {
 
+
+        }
+    });
 
 });

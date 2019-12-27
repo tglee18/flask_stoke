@@ -5,6 +5,8 @@
     <title>公司财务分析</title>
     <link rel="stylesheet" type="text/css" href="../css/analysis.css">
     <script src="/static/echarts.min.js"></script>
+    <script src="/static/jquery-3.4.1.min.js"></script>
+    <script src="/static/analysis/analysis.js"></script>
 </head>
 <style>
     body {
@@ -185,16 +187,16 @@
 <body>
 <div id="all">
     <ul id="gen_ul">
-        <li><a href="index1.html">首页概览</a></li>
+        <li><a id="compIndex">首页概览</a></li>
         <ul id="fond_flow">
-            <li><a href="zijinliuxiang.html">资金流向</a></li>
-            <li><a class="son">资金流向</a></li>
-            <li><a class="son">历史交易数据</a></li>
-            <li><a class="son">历史资金流向</a></li>
+            <li><a >资金流向</a></li>
+            <li><a class="son" id="zjlx">资金流向</a></li>
+            <li><a class="son" id="lsjysj">历史交易数据</a></li>
+            <li><a class="son" id="lszjlx">历史资金流向</a></li>
         </ul>
-        <li><a class="active" href="analysis.html">财务分析</a></li>
-        <li><a href="staff.html">股东股本</a></li>
-        <li><a href="company.html">公司简介</a></li>
+        <li><a class="active" id="compAnalysis">财务分析</a></li>
+        <li><a id="compStockHolder">股东股本</a></li>
+        <li><a id="compInfo">公司简介</a></li>
     </ul>
     <div class="container">
         <div class="head_tab"></div>

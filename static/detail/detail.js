@@ -10,6 +10,6 @@ $(function () {
     $("#com_general").append(li);
     $("li").click(function () {
         var span_mark = $(this).children(".span_mark").text().replace(/[^0-9]/g, "");
-        location.href = 'company?compID=' + span_mark;
+        location.href = 'comp_index?compID=' + span_mark;
     })
 });

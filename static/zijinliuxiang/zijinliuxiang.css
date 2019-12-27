@@ -136,3 +136,20 @@ td {
     color: white;
 
 }
+
+.cRed{
+    color: red;
+}
+.cGreen{
+    color: green;
+}
+
+#pic1{
+    float: left;
+}
+#pic2{
+    float: left;
+}
+#pic3{
+    float: left;
+}
