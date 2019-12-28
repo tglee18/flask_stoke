@@ -42,6 +42,7 @@ def get_deal():
         html = html.strip().strip('();')
         dict_json = json.loads(html)
 
+        updown = dict_json['{}'.format(code)]['updown']
         ask1 = dict_json['{}'.format(code)]['ask1']
         ask2 = dict_json['{}'.format(code)]['ask2']
         ask3 = dict_json['{}'.format(code)]['ask3']
@@ -78,6 +79,7 @@ def get_deal():
         inside = info[1].find('em').get_text()
 
         view_data = {
+            "updown": updown,  #变化量
             "weibi": weibi,  # 委比
             "weicha": weicha,  # 委差
             "ask1": ask1,  # 卖一价格
