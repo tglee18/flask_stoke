@@ -136,6 +136,10 @@ body {
         display: none;
     }
 
+    .son {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
     #all {
 
         margin: 0 auto;

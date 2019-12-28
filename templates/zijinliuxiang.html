@@ -62,4 +62,13 @@
         </div>
     </div>
 </body>
+<script>
+    $("#fond_flow").mouseover(function () {
+        $("#fond_flow :not(:first-child)").css("display", "block");
+    });
+    $("#fond_flow").mouseout(function () {
+        $("#fond_flow :not(:first-child)").css("display", "none");
+    });
+
+</script>
 </html>
