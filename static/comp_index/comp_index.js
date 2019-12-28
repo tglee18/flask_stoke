@@ -7,14 +7,14 @@ $(function () {
     };
 
     var companyID = getUrlParam('compID');
-    $('#compIndex').attr('href','/comp_index?compID='+companyID);
-    $('#lsjysj').attr('href','/transactionData?compID='+companyID);
-    $('#lszjlx').attr('href','/historyFundFlow?compID='+companyID+'&curP=1');
-    $('#zjlx').attr('href','/zijinliuxiang?compID='+companyID);
-    $('#zjlx1').attr('href','/zijinliuxiang?compID='+companyID);
-    $('#compAnalysis').attr('href','/analysis?compID='+companyID);
-    $('#compStockHolder').attr('href','/staff?compID='+companyID);
-    $('#compInfo').attr('href','/company?compID='+companyID);
+    $('#compIndex').attr('href', '/comp_index?compID=' + companyID);
+    $('#lsjysj').attr('href', '/transactionData?compID=' + companyID);
+    $('#lszjlx').attr('href', '/historyFundFlow?compID=' + companyID + '&curP=1');
+    $('#zjlx').attr('href', '/zijinliuxiang?compID=' + companyID);
+    $('#zjlx1').attr('href', '/zijinliuxiang?compID=' + companyID);
+    $('#compAnalysis').attr('href', '/analysis?compID=' + companyID);
+    $('#compStockHolder').attr('href', '/staff?compID=' + companyID);
+    $('#compInfo').attr('href', '/company?compID=' + companyID);
     //渲染图像到图表
     $.ajax({
         url: "/transactionData/get_HistoryTransactionData",
@@ -42,6 +42,7 @@ $(function () {
             var upBorderColor = '#8A0000';
             var downColor = '#00da3c';
             var downBorderColor = '#008F28';
+
             function splitData(rawData) {
                 var categoryData = [];
                 var values = []
@@ -261,7 +262,8 @@ $(function () {
     //插入数据到表
     topRefresh();
     dealRefresh();
-    function topRefresh(){
+
+    function topRefresh() {
         setTimeout(topRefresh, 5 * 1000);
         $.ajax({
             url: "/fininfo/get_fininfo",
@@ -271,9 +273,9 @@ $(function () {
             },
             dataType: "json",
             success: function (data) {
-                var str = "<span style='color:white '>"+data['datas']['company']+"("+companyID+")</span>";
+                var str = "<span style='color:white '>" + data['datas']['company'] + "(" + companyID + ")</span>";
                 if (data['datas']['updown'] > 0) {
-                    var str0 = "<span class='cRed' id='arrow'>" + data['datas']['price']+data['datas']['arrow'] + "</span>";
+                    var str0 = "<span class='cRed' id='arrow'>" + data['datas']['price'] + data['datas']['arrow'] + "</span>";
                     var str1 = "变化量：<span class='cRed'>" + data['datas']['updown'] + "</span>";
                     var str2 = "变化率：<span class='cRed'>" + data['datas']['percent'] + "</span>";
                     var str3 = "今开：<span class='cRed'>" + data['datas']['open'] + "</span>";
@@ -281,7 +283,7 @@ $(function () {
                     var str5 = "最高：<span class='cRed'>" + data['datas']['high'] + "</span>";
                     var str6 = "最低：<span class='cRed'>" + data['datas']['low'] + "</span>";
                 } else {
-                    var str0 = "<span class='cGreen' id='arrow'>" + data['datas']['price']+data['datas']['arrow'] + "</span>";
+                    var str0 = "<span class='cGreen' id='arrow'>" + data['datas']['price'] + data['datas']['arrow'] + "</span>";
                     var str1 = "变化量：<span class='cGreen'>" + data['datas']['updown'] + "</span>";
                     var str2 = "变化率：<span class='cGreen'>" + data['datas']['percent'] + "</span>";
                     var str3 = "今开：<span class='cGreen'>" + data['datas']['open'] + "</span>";
@@ -293,8 +295,8 @@ $(function () {
                 var str8 = "成交额：<span>" + data['datas']['turnover'] + "亿</span>";
                 var str9 = "52周最高：<span class='cRed'>" + data['datas']['highest'] + "</span>";
                 var str10 = "52周最低：<span class='cGreen'>" + data['datas']['lowest'] + "</span>";
-                var str11 = "市盈率：<span>"+data['datas']['syl']+"</span>";
-                var str12 = "流通市值：<span>"+data['datas']['ltsz']+"</span>";
+                var str11 = "市盈率：<span>" + data['datas']['syl'] + "</span>";
+                var str12 = "流通市值：<span>" + data['datas']['ltsz'] + "</span>";
                 $('#comp_name').html(str);
                 $('#price').html(str0);
                 $('#updown').html(str1);
@@ -312,7 +314,8 @@ $(function () {
             }
         });
     }
-    function dealRefresh(){
+
+    function dealRefresh() {
         setTimeout(dealRefresh, 60 * 1000);
         $.ajax({
             url: "/deal/get_dealinfo",
@@ -322,46 +325,45 @@ $(function () {
             },
             dataType: "json",
             success: function (data) {
-                var str1 = "委比：<span>"+data['datas']['weibi']+"</span>";
-                var str2 = "委差：<span>"+data['datas']['weicha']+"</span>";
-                if(data['datas']['updown']>0){
-                    var str3 = "<span class='cRed'>"+data['datas']['ask1']+"</span>";
-                    var str4 = "<span class='cRed'>"+data['datas']['ask2']+"</span>";
-                    var str5 = "<span class='cRed'>"+data['datas']['ask3']+"</span>";
-                    var str6 = "<span class='cRed'>"+data['datas']['ask4']+"</span>";
-                    var str7 = "<span class='cRed'>"+data['datas']['ask5']+"</span>";
-                    var str8 = "<span class='cRed'>"+data['datas']['bid1']+"</span>";
-                    var str9 = "<span class='cRed'>"+data['datas']['bid2']+"</span>";
-                    var str10 = "<span class='cRed'>"+data['datas']['bid3']+"</span>";
-                    var str11 = "<span class='cRed'>"+data['datas']['bid4']+"</span>";
-                    var str12 = "<span class='cRed'>"+data['datas']['bid5']+"</span>";
-                    var str23 = "当前价（元）：<span class='cRed'>"+data['datas']['price']+"</span>";
+                var str1 = "委比：<span>" + data['datas']['weibi'] + "</span>";
+                var str2 = "委差：<span>" + data['datas']['weicha'] + "</span>";
+                if (data['datas']['updown'] > 0) {
+                    var str3 = "<span class='cRed'>" + data['datas']['ask1'] + "</span>";
+                    var str4 = "<span class='cRed'>" + data['datas']['ask2'] + "</span>";
+                    var str5 = "<span class='cRed'>" + data['datas']['ask3'] + "</span>";
+                    var str6 = "<span class='cRed'>" + data['datas']['ask4'] + "</span>";
+                    var str7 = "<span class='cRed'>" + data['datas']['ask5'] + "</span>";
+                    var str8 = "<span class='cRed'>" + data['datas']['bid1'] + "</span>";
+                    var str9 = "<span class='cRed'>" + data['datas']['bid2'] + "</span>";
+                    var str10 = "<span class='cRed'>" + data['datas']['bid3'] + "</span>";
+                    var str11 = "<span class='cRed'>" + data['datas']['bid4'] + "</span>";
+                    var str12 = "<span class='cRed'>" + data['datas']['bid5'] + "</span>";
+                    var str23 = "当前价（元）：<span class='cRed'>" + data['datas']['price'] + "</span>";
+                } else {
+                    var str3 = "<span class='cGreen'>" + data['datas']['ask1'] + "</span>";
+                    var str4 = "<span class='cGreen'>" + data['datas']['ask2'] + "</span>";
+                    var str5 = "<span class='cGreen'>" + data['datas']['ask3'] + "</span>";
+                    var str6 = "<span class='cGreen'>" + data['datas']['ask4'] + "</span>";
+                    var str7 = "<span class='cGreen'>" + data['datas']['ask5'] + "</span>";
+                    var str8 = "<span class='cGreen'>" + data['datas']['bid1'] + "</span>";
+                    var str9 = "<span class='cGreen'>" + data['datas']['bid2'] + "</span>";
+                    var str10 = "<span class='cGreen'>" + data['datas']['bid3'] + "</span>";
+                    var str11 = "<span class='cGreen'>" + data['datas']['bid4'] + "</span>";
+                    var str12 = "<span class='cGreen'>" + data['datas']['bid5'] + "</span>";
+                    var str23 = "当前价（元）：<span class='cGreen'>" + data['datas']['price'] + "</span>";
                 }
-                else{
-                    var str3 = "<span class='cGreen'>"+data['datas']['ask1']+"</span>";
-                    var str4 = "<span class='cGreen'>"+data['datas']['ask2']+"</span>";
-                    var str5 = "<span class='cGreen'>"+data['datas']['ask3']+"</span>";
-                    var str6 = "<span class='cGreen'>"+data['datas']['ask4']+"</span>";
-                    var str7 = "<span class='cGreen'>"+data['datas']['ask5']+"</span>";
-                    var str8 = "<span class='cGreen'>"+data['datas']['bid1']+"</span>";
-                    var str9 = "<span class='cGreen'>"+data['datas']['bid2']+"</span>";
-                    var str10 = "<span class='cGreen'>"+data['datas']['bid3']+"</span>";
-                    var str11 = "<span class='cGreen'>"+data['datas']['bid4']+"</span>";
-                    var str12 = "<span class='cGreen'>"+data['datas']['bid5']+"</span>";
-                    var str23 = "当前价（元）：<span class='cGreen'>"+data['datas']['price']+"</span>";
-                }
-                var str13 = "<span>"+data['datas']['askvol1']+"</span>";
-                var str14 = "<span>"+data['datas']['askvol2']+"</span>";
-                var str15 = "<span>"+data['datas']['askvol3']+"</span>";
-                var str16 = "<span>"+data['datas']['askvol4']+"</span>";
-                var str17 = "<span>"+data['datas']['askvol5']+"</span>";
-                var str18 = "<span>"+data['datas']['bidvol1']+"</span>";
-                var str19 = "<span>"+data['datas']['bidvol2']+"</span>";
-                var str20 = "<span>"+data['datas']['bidvol3']+"</span>";
-                var str21 = "<span>"+data['datas']['bidvol4']+"</span>";
-                var str22 = "<span>"+data['datas']['bidvol5']+"</span>";
-                var str24 = "外盘：<span class='cRed'>"+data['datas']['outside']+"</span>";
-                var str25 = "内盘：<span class='cGreen'>"+data['datas']['inside']+"</span>";
+                var str13 = "<span>" + data['datas']['askvol1'] + "</span>";
+                var str14 = "<span>" + data['datas']['askvol2'] + "</span>";
+                var str15 = "<span>" + data['datas']['askvol3'] + "</span>";
+                var str16 = "<span>" + data['datas']['askvol4'] + "</span>";
+                var str17 = "<span>" + data['datas']['askvol5'] + "</span>";
+                var str18 = "<span>" + data['datas']['bidvol1'] + "</span>";
+                var str19 = "<span>" + data['datas']['bidvol2'] + "</span>";
+                var str20 = "<span>" + data['datas']['bidvol3'] + "</span>";
+                var str21 = "<span>" + data['datas']['bidvol4'] + "</span>";
+                var str22 = "<span>" + data['datas']['bidvol5'] + "</span>";
+                var str24 = "外盘：<span class='cRed'>" + data['datas']['outside'] + "</span>";
+                var str25 = "内盘：<span class='cGreen'>" + data['datas']['inside'] + "</span>";
                 $('#weibi').html(str1);
                 $('#weicha').html(str2);
                 $('#ask1').html(str3);

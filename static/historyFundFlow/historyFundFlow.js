@@ -37,7 +37,7 @@
 // };
 
 
-$(function() {
+$(function () {
     $("#fond_flow").mouseover(function () {
         $("#fond_flow :not(:first-child)").css("display", "block");
     });
@@ -56,10 +56,10 @@ $(function() {
     var companyID = getUrlParam('compID');
     var currentPage = getUrlParam('curP');
     $('#compIndex').attr('href', '/comp_index?compID=' + companyID);
-    $('#lsjysj').attr('href','/transactionData?compID='+companyID);
-    $('#lszjlx').attr('href','/historyFundFlow?compID='+companyID+'&curP=1');
-    $('#zjlx').attr('href','/zijinliuxiang?compID='+companyID);
-    $('#zjlx1').attr('href','/zijinliuxiang?compID='+companyID);
+    $('#lsjysj').attr('href', '/transactionData?compID=' + companyID);
+    $('#lszjlx').attr('href', '/historyFundFlow?compID=' + companyID + '&curP=1');
+    $('#zjlx').attr('href', '/zijinliuxiang?compID=' + companyID);
+    $('#zjlx1').attr('href', '/zijinliuxiang?compID=' + companyID);
     $('#compAnalysis').attr('href', '/analysis?compID=' + companyID);
     $('#compStockHolder').attr('href', '/staff?compID=' + companyID);
     $('#compInfo').attr('href', '/company?compID=' + companyID);
@@ -73,34 +73,34 @@ $(function() {
         dataType: "text",
         success: function (data) {
             let trstring = "";
-            if (data==="None"){
+            if (data === "None") {
                 trstring = `<td colspan="10">还没有历史交易记录</td>`;
                 $("#historyFundFlow").append(trstring);
-            }else{
+            } else {
                 freshTable();
-                if(Number(data)<8){
-                    for (let i=1;i<=Number(data);i++){
-                        trstring+=`<a class="clickable">${i}</a>`;
+                if (Number(data) < 8) {
+                    for (let i = 1; i <= Number(data); i++) {
+                        trstring += `<a class="clickable">${i}</a>`;
                     }
-                }else if(Number(data)>=8){
-                    for (let i=1;i<=Number(data);i++){
-                        if(i===1){
-                            if(Number(currentPage)===1){
-                                trstring+=`<span class="current">${i}</span>`;
-                            }else{
-                                trstring+=`<a class="clickable">${i}</a><span>...</span>`;
+                } else if (Number(data) >= 8) {
+                    for (let i = 1; i <= Number(data); i++) {
+                        if (i === 1) {
+                            if (Number(currentPage) === 1) {
+                                trstring += `<span class="current">${i}</span>`;
+                            } else {
+                                trstring += `<a class="clickable">${i}</a><span>...</span>`;
                             }
-                        }else if(i===Number(data)){
-                            if(Number(currentPage)===i){
-                                trstring+=`<span class="current">${i}</span>`;
-                            }else{
-                                trstring+=`<span>...</span><a>${i}</a>`;
+                        } else if (i === Number(data)) {
+                            if (Number(currentPage) === i) {
+                                trstring += `<span class="current">${i}</span>`;
+                            } else {
+                                trstring += `<span>...</span><a>${i}</a>`;
                             }
-                        }else if((i-2)<=Number(currentPage) && (i+2)>=Number(currentPage)){
-                            if(i===Number(currentPage)){
-                                trstring+=`<span class="current">${i}</span>`;
-                            }else {
-                              trstring+=`<a class="clickable">${i}</a>`;
+                        } else if ((i - 2) <= Number(currentPage) && (i + 2) >= Number(currentPage)) {
+                            if (i === Number(currentPage)) {
+                                trstring += `<span class="current">${i}</span>`;
+                            } else {
+                                trstring += `<a class="clickable">${i}</a>`;
                             }
                         }
                     }
@@ -110,19 +110,19 @@ $(function() {
         }
     });
 
-    $(".mod_pages").on("click",".clickable", function () {
+    $(".mod_pages").on("click", ".clickable", function () {
         console.log("aa");
         let pages = $(this).html();
-        window.location.href="/historyFundFlow?compID="+companyID+"&curP="+pages;
+        window.location.href = "/historyFundFlow?compID=" + companyID + "&curP=" + pages;
     });
 
-    function freshTable(){
-         $.ajax({
+    function freshTable() {
+        $.ajax({
             url: "/historyFundFlow/get_HistoryFundFlow",
             type: "GET",
             data: {
                 text: companyID,
-                curP:currentPage
+                curP: currentPage
             },
             dataType: "json",
             success: function (data) {
@@ -132,10 +132,9 @@ $(function() {
                 }
                 let trstr = "";
                 $.each(info_arr, function (index, element) {
-                    if(parseFloat(info_arr[index]['percent'])>0){
+                    if (parseFloat(info_arr[index]['percent']) > 0) {
                         trstr = `<tr><td>${info_arr[index]['date']}</td><td class="cRed">${info_arr[index]['close']}</td><td class="cRed">${info_arr[index]['percent']}</td><td>${info_arr[index]['turnover_rate']}</td><td>${info_arr[index]['inflow']}</td><td>${info_arr[index]['outflow']}</td><td class="cRed">${info_arr[index]['net_inflow']}</td><td>${info_arr[index]['main_inflow']}</td><td>${info_arr[index]['main_outflow']}</td><td class="cRed">${info_arr[index]['main_net_inflow']}</td></tr>`
-                    }
-                    else{
+                    } else {
                         trstr = `<tr><td>${info_arr[index]['date']}</td><td class="cGreen">${info_arr[index]['close']}</td><td class="cGreen">${info_arr[index]['percent']}</td><td>${info_arr[index]['turnover_rate']}</td><td>${info_arr[index]['inflow']}</td><td>${info_arr[index]['outflow']}</td><td class="cGreen">${info_arr[index]['net_inflow']}</td><td>${info_arr[index]['main_inflow']}</td><td>${info_arr[index]['main_outflow']}</td><td class="cGreen">${info_arr[index]['main_net_inflow']}</td></tr>`
                     }
                     $("#historyFundFlow").append(trstr);

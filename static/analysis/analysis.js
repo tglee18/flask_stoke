@@ -7,20 +7,21 @@ $(document).ready(function () {
     };
 
     var companyID = getUrlParam('compID');
-    $('#compIndex').attr('href','/comp_index?compID='+companyID);
-    $('#lsjysj').attr('href','/transactionData?compID='+companyID);
-    $('#lszjlx').attr('href','/historyFundFlow?compID='+companyID+'&curP=1');
-    $('#zjlx').attr('href','/zijinliuxiang?compID='+companyID);
-    $('#zjlx1').attr('href','/zijinliuxiang?compID='+companyID);
-    $('#compAnalysis').attr('href','/analysis?compID='+companyID);
-    $('#compStockHolder').attr('href','/staff?compID='+companyID);
-    $('#compInfo').attr('href','/company?compID='+companyID);
+    $('#compIndex').attr('href', '/comp_index?compID=' + companyID);
+    $('#lsjysj').attr('href', '/transactionData?compID=' + companyID);
+    $('#lszjlx').attr('href', '/historyFundFlow?compID=' + companyID + '&curP=1');
+    $('#zjlx').attr('href', '/zijinliuxiang?compID=' + companyID);
+    $('#zjlx1').attr('href', '/zijinliuxiang?compID=' + companyID);
+    $('#compAnalysis').attr('href', '/analysis?compID=' + companyID);
+    $('#compStockHolder').attr('href', '/staff?compID=' + companyID);
+    $('#compInfo').attr('href', '/company?compID=' + companyID);
 
     function getStringofNum(text) {
-            //取出字符串中的数字
-            var value = text.replace(/[^0-9]/ig,"");
-            return value;
-        }
+        //取出字符串中的数字
+        var value = text.replace(/[^0-9]/ig, "");
+        return value;
+    }
+
     $.ajax({
         url: "/transactionData/get_transactionData7",
         type: "GET",
@@ -133,12 +134,12 @@ $(document).ready(function () {
             myChart.setOption(option, true);
         }
     });
-    $('body').on('click','.cjmx',function(){
+    $('body').on('click', '.cjmx', function () {
         $.ajax({
             url: "/transactionData/get_transactionData7",
             type: "GET",
             data: {
-                text:companyID
+                text: companyID
             },
             dataType: "json",
             success: function (data) {
@@ -162,7 +163,7 @@ $(document).ready(function () {
                         }
                     },
                     legend: {
-                        data:['成交量（手）','成交金额（万元）','振幅（%）']
+                        data: ['成交量（手）', '成交金额（万元）', '振幅（%）']
                     },
                     xAxis: [
                         {
@@ -199,9 +200,9 @@ $(document).ready(function () {
                     ],
                     series: [
                         {
-                            name:'成交量',
-                            type:'bar',
-                            data:[
+                            name: '成交量',
+                            type: 'bar',
+                            data: [
                                 parseInt(getStringofNum(data['datas'][6]['volume'])),
                                 parseInt(getStringofNum(data['datas'][5]['volume'])),
                                 parseInt(getStringofNum(data['datas'][4]['volume'])),
@@ -212,9 +213,9 @@ $(document).ready(function () {
                             ]
                         },
                         {
-                            name:'成交金额',
-                            type:'bar',
-                            data:[
+                            name: '成交金额',
+                            type: 'bar',
+                            data: [
                                 parseInt(getStringofNum(data['datas'][6]['turnover'])),
                                 parseInt(getStringofNum(data['datas'][5]['turnover'])),
                                 parseInt(getStringofNum(data['datas'][4]['turnover'])),
@@ -226,10 +227,10 @@ $(document).ready(function () {
                             ]
                         },
                         {
-                            name:'振幅',
-                            type:'line',
+                            name: '振幅',
+                            type: 'line',
                             yAxisIndex: 1,
-                            data:[
+                            data: [
                                 data['datas'][6]['amplitude'],
                                 data['datas'][5]['amplitude'],
                                 data['datas'][4]['amplitude'],
@@ -242,26 +243,26 @@ $(document).ready(function () {
                         }
                     ]
                 };
-                myChart.setOption(option,true);
+                myChart.setOption(option, true);
             }
         });
     });
 
 
-    $('body').on('click','.gpjg',function(){
+    $('body').on('click', '.gpjg', function () {
         $.ajax({
             url: "/transactionData/get_transactionData7",
             type: "GET",
             data: {
-                text:companyID
+                text: companyID
             },
             dataType: "json",
             success: function (data) {
                 var myChart = echarts.init(document.getElementById('graph'));
-                var i,m;
+                var i, m;
                 m = parseFloat(data['datas'][0]['low']);
-                for(i=1;i<7;i++){
-                    if(parseFloat(data['datas'][i]['low'])<m){
+                for (i = 1; i < 7; i++) {
+                    if (parseFloat(data['datas'][i]['low']) < m) {
                         m = parseFloat(data['datas'][i]['low']);
                     }
                 }
@@ -271,7 +272,7 @@ $(document).ready(function () {
                         trigger: 'axis'
                     },
                     legend: {
-                        data:['开盘价','收盘价','最高价','最低价']
+                        data: ['开盘价', '收盘价', '最高价', '最低价']
                     },
                     grid: {
                         left: '3%',
@@ -299,13 +300,13 @@ $(document).ready(function () {
                     },
                     yAxis: {
                         type: 'value',
-                        min: m-1
+                        min: m - 1
                     },
                     series: [
                         {
-                            name:'开盘价',
-                            type:'line',
-                            data:[
+                            name: '开盘价',
+                            type: 'line',
+                            data: [
                                 parseFloat(data['datas'][6]['open']),
                                 parseFloat(data['datas'][5]['open']),
                                 parseFloat(data['datas'][4]['open']),
@@ -317,9 +318,9 @@ $(document).ready(function () {
                             ]
                         },
                         {
-                            name:'收盘价',
-                            type:'line',
-                            data:[
+                            name: '收盘价',
+                            type: 'line',
+                            data: [
                                 parseFloat(data['datas'][6]['close']),
                                 parseFloat(data['datas'][5]['close']),
                                 parseFloat(data['datas'][4]['close']),
@@ -331,9 +332,9 @@ $(document).ready(function () {
                             ]
                         },
                         {
-                            name:'最高价',
-                            type:'line',
-                            data:[
+                            name: '最高价',
+                            type: 'line',
+                            data: [
                                 parseFloat(data['datas'][6]['high']),
                                 parseFloat(data['datas'][5]['high']),
                                 parseFloat(data['datas'][4]['high']),
@@ -344,9 +345,9 @@ $(document).ready(function () {
                             ]
                         },
                         {
-                            name:'最低价',
-                            type:'line',
-                            data:[
+                            name: '最低价',
+                            type: 'line',
+                            data: [
                                 parseFloat(data['datas'][6]['low']),
                                 parseFloat(data['datas'][5]['low']),
                                 parseFloat(data['datas'][4]['low']),
@@ -358,13 +359,13 @@ $(document).ready(function () {
                         }
                     ]
                 };
-                myChart.setOption(option,true);
+                myChart.setOption(option, true);
             }
         });
     });
 
 
-    $('body').on('click','.zjlx',function(){
+    $('body').on('click', '.zjlx', function () {
         $.ajax({
             url: "/historyFundFlow/get_FundFlow7",
             type: "GET",
@@ -373,14 +374,14 @@ $(document).ready(function () {
             success: function (data) {
                 var myChart = echarts.init(document.getElementById('graph'));
                 option = {
-                    tooltip : {
+                    tooltip: {
                         trigger: 'axis',
-                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
                         }
                     },
                     legend: {
-                        data:['净流入', '资金流入', '资金流出']
+                        data: ['净流入', '资金流入', '资金流出']
                     },
                     grid: {
                         left: '3%',
@@ -388,16 +389,16 @@ $(document).ready(function () {
                         bottom: '3%',
                         containLabel: true
                     },
-                    xAxis : [
+                    xAxis: [
                         {
-                            type : 'value'
+                            type: 'value'
                         }
                     ],
-                    yAxis : [
+                    yAxis: [
                         {
-                            type : 'category',
-                            axisTick : {show: false},
-                            data : [
+                            type: 'category',
+                            axisTick: {show: false},
+                            data: [
                                 data['datas'][6]['date'],
                                 data['datas'][5]['date'],
                                 data['datas'][4]['date'],
@@ -408,36 +409,36 @@ $(document).ready(function () {
                             ]
                         }
                     ],
-                    series : [
+                    series: [
                         {
-                            name:'净流入',
-                            type:'bar',
+                            name: '净流入',
+                            type: 'bar',
                             label: {
                                 normal: {
                                     show: true,
                                     position: 'inside'
                                 }
                             },
-                            data:[
-                                parseInt(getStringofNum(data['datas'][6]['inflow']))-parseInt(getStringofNum(data['datas'][6]['outflow'])),
-                                parseInt(getStringofNum(data['datas'][5]['inflow']))-parseInt(getStringofNum(data['datas'][5]['outflow'])),
-                                parseInt(getStringofNum(data['datas'][4]['inflow']))-parseInt(getStringofNum(data['datas'][4]['outflow'])),
-                                parseInt(getStringofNum(data['datas'][3]['inflow']))-parseInt(getStringofNum(data['datas'][3]['outflow'])),
-                                parseInt(getStringofNum(data['datas'][2]['inflow']))-parseInt(getStringofNum(data['datas'][2]['outflow'])),
-                                parseInt(getStringofNum(data['datas'][1]['inflow']))-parseInt(getStringofNum(data['datas'][1]['outflow'])),
-                                parseInt(getStringofNum(data['datas'][0]['inflow']))-parseInt(getStringofNum(data['datas'][0]['outflow']))
+                            data: [
+                                parseInt(getStringofNum(data['datas'][6]['inflow'])) - parseInt(getStringofNum(data['datas'][6]['outflow'])),
+                                parseInt(getStringofNum(data['datas'][5]['inflow'])) - parseInt(getStringofNum(data['datas'][5]['outflow'])),
+                                parseInt(getStringofNum(data['datas'][4]['inflow'])) - parseInt(getStringofNum(data['datas'][4]['outflow'])),
+                                parseInt(getStringofNum(data['datas'][3]['inflow'])) - parseInt(getStringofNum(data['datas'][3]['outflow'])),
+                                parseInt(getStringofNum(data['datas'][2]['inflow'])) - parseInt(getStringofNum(data['datas'][2]['outflow'])),
+                                parseInt(getStringofNum(data['datas'][1]['inflow'])) - parseInt(getStringofNum(data['datas'][1]['outflow'])),
+                                parseInt(getStringofNum(data['datas'][0]['inflow'])) - parseInt(getStringofNum(data['datas'][0]['outflow']))
                             ]
                         },
                         {
-                            name:'资金流入',
-                            type:'bar',
+                            name: '资金流入',
+                            type: 'bar',
                             stack: '总量',
                             label: {
                                 normal: {
                                     show: true
                                 }
                             },
-                            data:[
+                            data: [
                                 parseInt(getStringofNum(data['datas'][6]['inflow'])),
                                 parseInt(getStringofNum(data['datas'][5]['inflow'])),
                                 parseInt(getStringofNum(data['datas'][4]['inflow'])),
@@ -448,8 +449,8 @@ $(document).ready(function () {
                             ]
                         },
                         {
-                            name:'资金流出',
-                            type:'bar',
+                            name: '资金流出',
+                            type: 'bar',
                             stack: '总量',
                             label: {
                                 normal: {
@@ -457,7 +458,7 @@ $(document).ready(function () {
                                     position: 'left'
                                 }
                             },
-                            data:[
+                            data: [
                                 -parseInt(getStringofNum(data['datas'][6]['outflow'])),
                                 -parseInt(getStringofNum(data['datas'][5]['outflow'])),
                                 -parseInt(getStringofNum(data['datas'][4]['outflow'])),
@@ -469,12 +470,12 @@ $(document).ready(function () {
                         }
                     ]
                 };
-                myChart.setOption(option,true);
+                myChart.setOption(option, true);
             }
         });
     });
 
-    $('body').on('click','.zlzjlx',function(){
+    $('body').on('click', '.zlzjlx', function () {
         $.ajax({
             url: "/historyFundFlow/get_FundFlow7",
             type: "GET",
@@ -483,14 +484,14 @@ $(document).ready(function () {
             success: function (data) {
                 var myChart = echarts.init(document.getElementById('graph'));
                 option = {
-                    tooltip : {
+                    tooltip: {
                         trigger: 'axis',
-                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
                         }
                     },
                     legend: {
-                        data:['主力净流入', '主力流入', '主力流出']
+                        data: ['主力净流入', '主力流入', '主力流出']
                     },
                     grid: {
                         left: '3%',
@@ -498,16 +499,16 @@ $(document).ready(function () {
                         bottom: '3%',
                         containLabel: true
                     },
-                    xAxis : [
+                    xAxis: [
                         {
-                            type : 'value'
+                            type: 'value'
                         }
                     ],
-                    yAxis : [
+                    yAxis: [
                         {
-                            type : 'category',
-                            axisTick : {show: false},
-                            data : [
+                            type: 'category',
+                            axisTick: {show: false},
+                            data: [
                                 data['datas'][6]['date'],
                                 data['datas'][5]['date'],
                                 data['datas'][4]['date'],
@@ -518,37 +519,37 @@ $(document).ready(function () {
                             ]
                         }
                     ],
-                    series : [
+                    series: [
                         {
-                            name:'主力净流入',
-                            type:'bar',
+                            name: '主力净流入',
+                            type: 'bar',
                             label: {
                                 normal: {
                                     show: true,
                                     position: 'inside'
                                 }
                             },
-                            data:[
-                                parseInt(getStringofNum(data['datas'][6]['main_inflow']))-parseInt(getStringofNum(data['datas'][6]['main_outflow'])),
-                                parseInt(getStringofNum(data['datas'][5]['main_inflow']))-parseInt(getStringofNum(data['datas'][5]['main_outflow'])),
-                                parseInt(getStringofNum(data['datas'][4]['main_inflow']))-parseInt(getStringofNum(data['datas'][4]['main_outflow'])),
-                                parseInt(getStringofNum(data['datas'][3]['main_inflow']))-parseInt(getStringofNum(data['datas'][3]['main_outflow'])),
-                                parseInt(getStringofNum(data['datas'][2]['main_inflow']))-parseInt(getStringofNum(data['datas'][2]['main_outflow'])),
-                                parseInt(getStringofNum(data['datas'][1]['main_inflow']))-parseInt(getStringofNum(data['datas'][1]['main_outflow'])),
-                                parseInt(getStringofNum(data['datas'][0]['main_inflow']))-parseInt(getStringofNum(data['datas'][0]['main_outflow']))
+                            data: [
+                                parseInt(getStringofNum(data['datas'][6]['main_inflow'])) - parseInt(getStringofNum(data['datas'][6]['main_outflow'])),
+                                parseInt(getStringofNum(data['datas'][5]['main_inflow'])) - parseInt(getStringofNum(data['datas'][5]['main_outflow'])),
+                                parseInt(getStringofNum(data['datas'][4]['main_inflow'])) - parseInt(getStringofNum(data['datas'][4]['main_outflow'])),
+                                parseInt(getStringofNum(data['datas'][3]['main_inflow'])) - parseInt(getStringofNum(data['datas'][3]['main_outflow'])),
+                                parseInt(getStringofNum(data['datas'][2]['main_inflow'])) - parseInt(getStringofNum(data['datas'][2]['main_outflow'])),
+                                parseInt(getStringofNum(data['datas'][1]['main_inflow'])) - parseInt(getStringofNum(data['datas'][1]['main_outflow'])),
+                                parseInt(getStringofNum(data['datas'][0]['main_inflow'])) - parseInt(getStringofNum(data['datas'][0]['main_outflow']))
 
                             ]
                         },
                         {
-                            name:'主力流入',
-                            type:'bar',
+                            name: '主力流入',
+                            type: 'bar',
                             stack: '总量',
                             label: {
                                 normal: {
                                     show: true
                                 }
                             },
-                            data:[
+                            data: [
                                 parseInt(getStringofNum(data['datas'][6]['main_inflow'])),
                                 parseInt(getStringofNum(data['datas'][5]['main_inflow'])),
                                 parseInt(getStringofNum(data['datas'][4]['main_inflow'])),
@@ -559,8 +560,8 @@ $(document).ready(function () {
                             ]
                         },
                         {
-                            name:'主力流出',
-                            type:'bar',
+                            name: '主力流出',
+                            type: 'bar',
                             stack: '总量',
                             label: {
                                 normal: {
@@ -568,7 +569,7 @@ $(document).ready(function () {
                                     position: 'left'
                                 }
                             },
-                            data:[
+                            data: [
                                 -parseInt(getStringofNum(data['datas'][6]['main_outflow'])),
                                 -parseInt(getStringofNum(data['datas'][5]['main_outflow'])),
                                 -parseInt(getStringofNum(data['datas'][4]['main_outflow'])),
@@ -580,11 +581,11 @@ $(document).ready(function () {
                         }
                     ]
                 };
-            myChart.setOption(option,true);
+                myChart.setOption(option, true);
             }
         });
     });
-    $('body').on('click','.zlzjlx',function(){
+    $('body').on('click', '.zlzjlx', function () {
 
     });
 });

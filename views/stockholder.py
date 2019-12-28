@@ -8,7 +8,7 @@ stockholder = Blueprint('stockholder', __name__)
 
 
 @stockholder.route('/')
-#@is_login
+# @is_login
 def index():
     return render_template("stockholder.html")
 

@@ -32,6 +32,7 @@ def toCompany():
 def comp_index():
     return render_template("comp_index.html")
 
+
 # 公司资金流向
 @indexSet.route('/zijinliuxiang')
 # @is_login

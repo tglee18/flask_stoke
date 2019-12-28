@@ -79,7 +79,7 @@ def get_deal():
         inside = info[1].find('em').get_text()
 
         view_data = {
-            "updown": updown,  #变化量
+            "updown": updown,  # 变化量
             "weibi": weibi,  # 委比
             "weicha": weicha,  # 委差
             "ask1": ask1,  # 卖一价格

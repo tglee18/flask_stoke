@@ -8,7 +8,7 @@ transactionData = Blueprint('transactionData', __name__)
 
 
 @transactionData.route('/')
-#@is_login
+# @is_login
 def index():
     return render_template("transactionData.html")
 

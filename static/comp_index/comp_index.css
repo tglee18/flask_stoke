@@ -1,182 +1,184 @@
 body {
-            margin: 0;
-            padding: 0;
-            background: url("/static/image/background.jpg") repeat 0px 0px fixed;
-            background-size: 100% 100%;
-            z-index: -1;
-        }
+    margin: 0;
+    padding: 0;
+    background: url("/static/image/background.jpg") repeat 0px 0px fixed;
+    background-size: 100% 100%;
+    z-index: -1;
+}
 
 a {
-        text-decoration: none;
-    }
+    text-decoration: none;
+}
 
 
 ul, li {
-            list-style: none;
-        }
+    list-style: none;
+}
 
 
-        #all {
-            margin: 0 auto;
-            width: 80%;
-            height: auto;
+#all {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
 
-        }
+}
 
-        #gen_ul {
-            margin: 20px auto;
-            height: 60px;
-            width: 100%;
-            left: 10%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.2);
+#gen_ul {
+    margin: 20px auto;
+    height: 60px;
+    width: 100%;
+    left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
 
-        }
+}
 
-        #gen_ul li {
-            width: 120px;
-            height: 100%;
+#gen_ul li {
+    width: 120px;
+    height: 100%;
 
-        }
+}
 
-        #gen_ul li a {
-            display: inline-block;
-            width: 100%;
-            height: 60px;
-            text-align: center;
-            line-height: 60px;
-            color: white;
+#gen_ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
 
-        }
+}
 
-        #gen_ul li a:hover {
-        font-size: 1.4rem;
-        background-color: rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-    }
+#gen_ul li a:hover {
+    font-size: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
 
-    #gen_ul li a:active {
-        font-size: 1.4rem;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+#gen_ul li a:active {
+    font-size: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
-    #gen_ul li .active {
-        font-size: 1.4rem;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+#gen_ul li .active {
+    font-size: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
-    #fond_flow :not(:first-child) {
-        display: none;
-    }
+#fond_flow :not(:first-child) {
+    display: none;
+}
 
-        #container {
-            margin-top: 20px;
-            width: 1100px;
-            height: 600px;
-            float: left;
-            background-color: rgba(169, 169, 169, 0.5);
-            z-index: -1;
-        }
+#container {
+    margin-top: 20px;
+    width: 1100px;
+    height: 600px;
+    float: left;
+    background-color: rgba(169, 169, 169, 0.5);
+    z-index: -1;
+}
 
-        table {
-            background-color: rgba(0, 0, 0, 0.3);
-            border-collapse: collapse;
-            width: 20%;
-            height: auto;
-            margin: 0 auto;
-            margin-right: 20px;
-            padding: 0;
-            float: right;
-            color: white;
-        }
+table {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
+    width: 20%;
+    height: auto;
+    margin: 0 auto;
+    margin-right: 20px;
+    padding: 0;
+    float: right;
+    color: white;
+}
 
-        .table2 tr:hover {
-            background-color: rgba(169, 169, 169, 0.5);
-            cursor: pointer;
-        }
+.table2 tr:hover {
+    background-color: rgba(169, 169, 169, 0.5);
+    cursor: pointer;
+}
 
-        td {
-            text-align: left;
-            padding: 5px;
-            height: 2rem;
-            width: 33.33333333%;
-            overflow: hidden;
-            border: 1px solid grey;
+td {
+    text-align: left;
+    padding: 5px;
+    height: 2rem;
+    width: 33.33333333%;
+    overflow: hidden;
+    border: 1px solid grey;
 
-        }
+}
 
-        th {
-            text-align: left;
-            padding: 5px;
-            height: 2rem;
-            width: 25%;
-            overflow: hidden;
-            border: 1px solid grey;
-            background-color: white;
-            font-size: 1rem;
-        }
+th {
+    text-align: left;
+    padding: 5px;
+    height: 2rem;
+    width: 25%;
+    overflow: hidden;
+    border: 1px solid grey;
+    background-color: white;
+    font-size: 1rem;
+}
 
-        .four {
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-            width: 20%;
-            height: 2rem;
-            margin-right: 20px;
-            margin-top: 0;
-            padding: 0;
-            float: right;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
+.four {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    width: 20%;
+    height: 2rem;
+    margin-right: 20px;
+    margin-top: 0;
+    padding: 0;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
-        .four:hover {
-            background-color: rgba(169, 169, 169, 0.5);
-            cursor: pointer;
-        }
+.four:hover {
+    background-color: rgba(169, 169, 169, 0.5);
+    cursor: pointer;
+}
 
-        #wei {
-            margin-top: 20px;
-        }
+#wei {
+    margin-top: 20px;
+}
 
-        #comp_name {
-            float: left;
-            margin-top: 0;
-            margin-left: 10%;
-            height: 3rem;
-            width: 120px;
-            margin-bottom: 20px;
-            background-color: rgba(0, 0, 0, 0.5)
-        }
+#comp_name {
+    float: left;
+    margin-top: 0;
+    margin-left: 10%;
+    height: 3rem;
+    width: 120px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
 
-        #fininfo {
-            float: left;
-            margin-left: 0;
-            margin-bottom: 20px;
-            width: 70%;
-            height: auto;
+#fininfo {
+    float: left;
+    margin-left: 0;
+    margin-bottom: 20px;
+    width: 70%;
+    height: auto;
 
-        }
+}
 
-        #fininfo td {
-            height: 1.4rem;
-            width: 14.3%;
-            font-size: .8rem;
+#fininfo td {
+    height: 1.4rem;
+    width: 14.3%;
+    font-size: .8rem;
 
-        }
-        .cRed{
-            color: red;
-        }
-        .cGreen{
-            color: limegreen;
-        }
+}
 
-        #arrow{
-            font-size: 30px;
-        }
+.cRed {
+    color: red;
+}
 
-        .son {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
+.cGreen {
+    color: limegreen;
+}
+
+#arrow {
+    font-size: 30px;
+}
+
+.son {
+    background-color: rgba(0, 0, 0, 0.3);
+}

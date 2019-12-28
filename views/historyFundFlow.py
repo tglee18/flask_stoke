@@ -79,7 +79,7 @@ def get_data2():
         code = data_list[0].Code
         code = code[2:]
         view_data = []
-        url = "http://quotes.money.163.com/trade/lszjlx_{},{}.html#01b08".format(code, int(currentPage)-1)
+        url = "http://quotes.money.163.com/trade/lszjlx_{},{}.html#01b08".format(code, int(currentPage) - 1)
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36'
         }

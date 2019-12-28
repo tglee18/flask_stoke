@@ -7,14 +7,14 @@ $(function () {
     };
 
     var companyID = getUrlParam('compID');
-    $('#compIndex').attr('href','/comp_index?compID='+companyID);
-    $('#lsjysj').attr('href','/transactionData?compID='+companyID);
-    $('#lszjlx').attr('href','/historyFundFlow?compID='+companyID+'&curP=1');
-    $('#zjlx').attr('href','/zijinliuxiang?compID='+companyID);
-    $('#zjlx1').attr('href','/zijinliuxiang?compID='+companyID);
-    $('#compAnalysis').attr('href','/analysis?compID='+companyID);
-    $('#compStockHolder').attr('href','/staff?compID='+companyID);
-    $('#compInfo').attr('href','/company?compID='+companyID);
+    $('#compIndex').attr('href', '/comp_index?compID=' + companyID);
+    $('#lsjysj').attr('href', '/transactionData?compID=' + companyID);
+    $('#lszjlx').attr('href', '/historyFundFlow?compID=' + companyID + '&curP=1');
+    $('#zjlx').attr('href', '/zijinliuxiang?compID=' + companyID);
+    $('#zjlx1').attr('href', '/zijinliuxiang?compID=' + companyID);
+    $('#compAnalysis').attr('href', '/analysis?compID=' + companyID);
+    $('#compStockHolder').attr('href', '/staff?compID=' + companyID);
+    $('#compInfo').attr('href', '/company?compID=' + companyID);
     var info_arr = [];
     $.ajax({
         url: "/baseinfo/get_baseinfo",
@@ -25,10 +25,10 @@ $(function () {
         },
         dataType: "json",
         success: function (data) {
-            let comp_info=data.datas[0];
-            let td_arr=$("td").not("#tag");
+            let comp_info = data.datas[0];
+            let td_arr = $("td").not("#tag");
             console.log(td_arr);
-           $(td_arr[0]).text(comp_info["gsmc"]);
+            $(td_arr[0]).text(comp_info["gsmc"]);
             $(td_arr[1]).text(comp_info["ywmc"]);
             $(td_arr[2]).text(comp_info["cym"]);
             $(td_arr[3]).text(comp_info["agdm"]);
@@ -36,7 +36,7 @@ $(function () {
             $(td_arr[5]).text(comp_info["bgdm"]);
             $(td_arr[6]).text(comp_info["bgjc"]);
             $(td_arr[7]).text(comp_info["hgdm"]);
-           $(td_arr[8]).text(comp_info["hgjc"]);
+            $(td_arr[8]).text(comp_info["hgjc"]);
             $(td_arr[9]).text(comp_info["zqlb"]);
             $(td_arr[10]).text(comp_info["sshy"]);
             $(td_arr[11]).text(comp_info["ssjys"]);
