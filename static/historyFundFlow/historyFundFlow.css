@@ -3,7 +3,7 @@ body {
         padding: 0;
         background: url("/static/image/background.jpg") repeat 0px 0px fixed;
         background-size: 100% 100%;
-        z-index: -1;
+        /*z-index: -1;*/
     }
 
     a {
@@ -150,10 +150,10 @@ body {
         width: 100%;
         background-color: #f8f8f8;
         height: auto;
-        margin: 10px auto;
+        margin: 10px 0 0 0;
         box-shadow: #666 0px 0px 15px;;
         padding-bottom:20px;
-         z-index: -9999;
+         z-index: -998;
     }
 
     .child_header {
@@ -190,6 +190,33 @@ body {
         padding: 0;
         margin-bottom: 20px;
     }
+
+     .mod_pages{
+         position: relative;
+         border-collapse: collapse;
+         background-color: #f8f8f8;
+         width: 100%;
+         padding: 20px 0;
+         margin: 0 auto;
+         text-align: center;
+         top:-30px;
+     }
+
+     .mod_pages a{
+         display: inline-block;
+         width: 20px;
+         margin: 3px;
+         border: 1px solid gainsboro;
+         cursor: pointer;
+     }
+     .mod_pages .current{
+         display: inline-block;
+         background-color: #34495e;
+         color: gainsboro;
+         width: 20px;
+         margin: 2px;
+         border: 1px solid gainsboro;
+     }
 
 
     td {
