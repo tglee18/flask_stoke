@@ -11,6 +11,7 @@ $(function () {
     $('#lsjysj').attr('href','/transactionData?compID='+companyID);
     $('#lszjlx').attr('href','/historyFundFlow?compID='+companyID);
     $('#zjlx').attr('href','/zijinliuxiang?compID='+companyID);
+    $('#zjlx1').attr('href','/zijinliuxiang?compID='+companyID);
     $('#compAnalysis').attr('href','/analysis?compID='+companyID);
     $('#compStockHolder').attr('href','/staff?compID='+companyID);
     $('#compInfo').attr('href','/company?compID='+companyID);

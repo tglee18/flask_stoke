@@ -59,6 +59,10 @@ ul, li {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.son {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
 #fond_flow :not(:first-child) {
     display: none;
 }

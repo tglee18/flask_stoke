@@ -6,6 +6,11 @@ body {
             z-index: -1;
         }
 
+ul, li {
+            list-style: none;
+        }
+
+
         #all {
             margin: 0 auto;
             width: 80%;
@@ -15,7 +20,6 @@ body {
 
         #gen_ul {
             margin: 20px auto;
-
             height: 60px;
             width: 100%;
             left: 10%;
@@ -48,15 +52,16 @@ body {
             cursor: pointer;
         }
 
+        #gen_ul li .active {
+            font-size: 1.4rem;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
         #gen_ul li a:active {
             font-size: 1.4rem;
             background-color: rgba(0, 0, 0, 0.2);
         }
 
-        #gen_ul li .active {
-            font-size: 1.4rem;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
 
         #fond_flow :not(:first-child) {
             display: none;
@@ -165,4 +170,8 @@ body {
 
         #arrow{
             font-size: 30px;
+        }
+
+        .son {
+            background-color: rgba(0, 0, 0, 0.3);
         }

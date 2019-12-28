@@ -69,6 +69,10 @@
         background-color: rgba(0, 0, 0, 0.2);
     }
 
+    .son {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
     #fond_flow :not(:first-child) {
         display: none;
     }
@@ -266,4 +270,13 @@
     </div>
 </div>
 </body>
+<script>
+    $("#fond_flow").mouseover(function () {
+        $("#fond_flow :not(:first-child)").css("display", "block");
+    });
+    $("#fond_flow").mouseout(function () {
+        $("#fond_flow :not(:first-child)").css("display", "none");
+    });
+
+</script>
 </html>
