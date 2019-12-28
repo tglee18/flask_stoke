@@ -89,6 +89,7 @@ body {
     }
 
     #gen_ul {
+        z-index: 999;
         margin: 20px auto;
         height: 60px;
         width: 100%;
@@ -131,6 +132,11 @@ body {
         font-size: 1.4rem;
         background-color: rgba(0, 0, 0, 0.2);
     }
+
+    .son {
+         /*z-index: 998;*/
+            background-color: rgba(0, 0, 0, 0.3);
+        }
 
     #fond_flow :not(:first-child) {
         display: none;
@@ -184,8 +190,8 @@ body {
         width: 80%;
         margin: 10px auto;
         padding: 0;
-        margin-bottom: 20px
-
+        margin-bottom: 20px;
+        z-index:-1;
     }
 
 

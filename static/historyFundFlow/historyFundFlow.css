@@ -54,7 +54,6 @@ body {
         color: #f0f0f0;
         text-align: center;
         line-height: 4rem;
-
     }
 
     .header li a:hover {
@@ -113,7 +112,6 @@ body {
         text-align: center;
         line-height: 60px;
         color: white;
-
     }
 
     #gen_ul li a:hover {
@@ -132,6 +130,10 @@ body {
         background-color: rgba(0, 0, 0, 0.2);
     }
 
+    .son {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
     #fond_flow :not(:first-child) {
         display: none;
     }
@@ -144,12 +146,14 @@ body {
     }
 
     .container {
+        position: relative;
         width: 100%;
         background-color: #f8f8f8;
         height: auto;
         margin: 10px auto;
         box-shadow: #666 0px 0px 15px;;
         padding-bottom:20px;
+         z-index: -9999;
     }
 
     .child_header {
@@ -184,8 +188,7 @@ body {
         width: 80%;
         margin: 10px auto;
         padding: 0;
-        margin-bottom: 20px
-
+        margin-bottom: 20px;
     }
 
 

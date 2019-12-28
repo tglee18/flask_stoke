@@ -271,7 +271,7 @@ $(function () {
             },
             dataType: "json",
             success: function (data) {
-                var str = "<span>"+data['datas']['company']+"("+companyID+")</span>";
+                var str = "<span style='color:white '>"+data['datas']['company']+"("+companyID+")</span>";
                 if (data['datas']['updown'] > 0) {
                     var str0 = "<span class='cRed' id='arrow'>" + data['datas']['price']+data['datas']['arrow'] + "</span>";
                     var str1 = "变化量：<span class='cRed'>" + data['datas']['updown'] + "</span>";

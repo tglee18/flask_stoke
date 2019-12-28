@@ -30,9 +30,6 @@ body {
         list-style: none;
     }
 
-    a {
-        text-decoration: none;
-    }
 
     .header li {
         position: relative;

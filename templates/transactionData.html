@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/static/transactionData/transactionData.css">
 </head>
 <body>
-<body>
 <div class="header">
     <ul>
         <li><a class="active" href="/">首页</a></li>
@@ -23,13 +22,13 @@
                 <ul id="gen_ul">
                     <li><a id="compIndex">首页概览</a></li>
                     <ul id="fond_flow">
-                        <li><a id="zjlx">资金流向</a></li>
+                        <li><a id="zjlx" class="active">资金流向</a></li>
                          <li><a class="son" id="zjlx1">资金流向</a></li>
                         <li><a class="son" id="lsjysj">历史交易数据</a></li>
                         <li><a class="son" id="lszjlx">历史资金流向</a></li>
                     </ul>
                     <li><a id="compAnalysis">财务分析</a></li>
-                    <li><a class="active" id="compStockHolder">股东股本</a></li>
+                    <li><a id="compStockHolder">股东股本</a></li>
                      <li><a id="compInfo">公司简介</a></li>
                 </ul>
                 <div class="container">
@@ -222,5 +221,14 @@
                 </div>
         </div>
 </body>
-</body>
+<script>
+    $("#fond_flow").mouseover(function () {
+        $("#fond_flow :not(:first-child)").css("display", "block");
+    });
+    $("#fond_flow").mouseout(function () {
+        $("#fond_flow :not(:first-child)").css("display", "none");
+    });
+
+</script>
+
 </html>
