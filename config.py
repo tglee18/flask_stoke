@@ -30,6 +30,6 @@ def is_login(func):
             ret = func(*args, **kwargs)  # func = home
             return ret
         else:
-            return render_template('login.html')
+            return render_template('log.html')
 
     return wrapper
