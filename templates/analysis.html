@@ -24,6 +24,80 @@
     ul, li {
         list-style: none;
     }
+.header {
+        padding: 0;
+        margin: 0 auto;
+        height: 4.5rem;
+        width: 80%;
+
+        border-bottom: 1px solid white;
+
+
+    }
+
+    .header ul, li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .header li {
+        position: relative;
+        float: left;
+    }
+
+    .header ul {
+        display: inline-block;
+        font-family: "宋体";
+        font-size: 1.2rem;
+        width: 32rem;
+        height: 4rem;
+
+    }
+
+    .header li a {
+        width: 8rem;
+        height: 4rem;
+        color: #f0f0f0;
+        text-align: center;
+        line-height: 4rem;
+
+    }
+
+    .header li a:hover {
+        color: white;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .header li .active {
+        color: white;
+        font-size: 1.4rem;
+    }
+
+    .header li :last-child {
+        float: right;
+
+    }
+
+    #welcome {
+        float: right;
+        height: 4rem;
+        width: 8rem;
+        line-height: 4rem;
+
+    }
+
+    #welcome span {
+        text-align: center;
+        font-size: .8rem;
+        color: white;
+
+    }
 
     #gen_ul {
         margin: 20px auto;
@@ -189,6 +263,16 @@
 
 
 <body>
+<div class="header">
+    <ul>
+
+        <li><a class="active" href="/">首页</a></li>
+        <li><a href="/login">登录</a></li>
+        <li><a href="/register">注册</a></li>
+        <li><a>个人中心</a></li>
+    </ul>
+    <div id="welcome"><span>欢迎</span><i class="iconfont &#xe6c8;"></i></div>
+</div>
 <div id="all">
     <ul id="gen_ul">
         <li><a id="compIndex">首页概览</a></li>
@@ -198,10 +282,14 @@
             <li><a class="son" id="lsjysj">历史交易数据</a></li>
             <li><a class="son" id="lszjlx">历史资金流向</a></li>
         </ul>
-        <li><a class="active" id="compAnalysis">财务分析</a></li>
+        <ul id="fond_flow1">
+            <li><a id="compAnalysis">财务分析</a></li>
+            <li><a class="son">主要财务指标</a></li>
+        </ul>
         <li><a id="compStockHolder">股东股本</a></li>
-        <li><a id="compInfo">公司简介</a></li>
+        <li><a class="active" id="compInfo">公司简介</a></li>
     </ul>
+
     <div class="container">
         <div class="head_tab"></div>
         <div class="child_header">
@@ -266,6 +354,13 @@
             if (option && typeof option === "object") {
                 myChart.setOption(option, true);
             }
+             $("#fond_flow").mouseover(function () {
+            $("#fond_flow :not(:first-child)").css("display", "block");
+             });
+            $("#fond_flow").mouseout(function () {
+        $("#fond_flow :not(:first-child)").css("display", "none");
+    });
+
         </script>
     </div>
 </div>

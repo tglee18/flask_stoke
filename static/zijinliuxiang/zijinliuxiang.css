@@ -13,6 +13,80 @@ a {
 ul, li {
     list-style: none;
 }
+.header {
+        padding: 0;
+        margin: 0 auto;
+        height: 4.5rem;
+        width: 80%;
+
+        border-bottom: 1px solid white;
+
+
+    }
+
+    .header ul, li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .header li {
+        position: relative;
+        float: left;
+    }
+
+    .header ul {
+        display: inline-block;
+        font-family: "宋体";
+        font-size: 1.2rem;
+        width: 32rem;
+        height: 4rem;
+
+    }
+
+    .header li a {
+        width: 8rem;
+        height: 4rem;
+        color: #f0f0f0;
+        text-align: center;
+        line-height: 4rem;
+
+    }
+
+    .header li a:hover {
+        color: white;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .header li .active {
+        color: white;
+        font-size: 1.4rem;
+    }
+
+    .header li :last-child {
+        float: right;
+
+    }
+
+    #welcome {
+        float: right;
+        height: 4rem;
+        width: 8rem;
+        line-height: 4rem;
+
+    }
+
+    #welcome span {
+        text-align: center;
+        font-size: .8rem;
+        color: white;
+
+    }
 
 #gen_ul {
     margin: 20px auto;
@@ -64,8 +138,19 @@ ul, li {
         }
 
 #fond_flow :not(:first-child) {
-    display: none;
-}
+            display: none;
+        }
+
+        #fond_flow1 :not(:first-child) {
+            display: none;
+        }
+        #fond_flow:hover {
+            display: block;
+        }
+        #fond_flow1:hover {
+            display: block;
+        }
+
 
 #all {
     margin: 0 auto;
@@ -78,7 +163,8 @@ ul, li {
     background-color: #f8f8f8;
     height: auto;
     margin: 10px auto;
-    box-shadow: #666 0px 0px 15px;;
+    box-shadow: #666 0px 0px 15px;
+    padding-bottom:20px
 }
 
 .child_header {
@@ -103,7 +189,6 @@ ul, li {
     color: #34495e;
     height: 40px;
     line-height: 40px;
-
 }
 
 .staff_table table {
@@ -143,17 +228,34 @@ td {
 
 .cRed{
     color: red;
+    margin-right:20px;
 }
 .cGreen{
     color: green;
+    margin-left:20px
+}
+#child_body{
+
+}
+#pic1,#pic2,#pic3{
+    width:80%;
+    margin:20px auto;
+    border:1.5px dashed #34495e;
+    border-radius:10px;
+
+
 }
 
-#pic1{
-    float: left;
+#part1,#part4,#part6,#part3{
+    margin-left:40px;
+    width:100%;
+    height:60px;
+
 }
-#pic2{
-    float: left;
+#part2,#part5,#part7{
+    width:600px;
+    height:350px;
+    margin-left:40px;
+
 }
-#pic3{
-    float: left;
-}
+

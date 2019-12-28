@@ -5,6 +5,12 @@ $(document).ready(function () {
         if (r != null) return decodeURI(r[2]);
         return null; //返回参数值
     };
+     $("#fond_flow").mouseover(function () {
+        $("#fond_flow :not(:first-child)").css("display", "block");
+    });
+    $("#fond_flow").mouseout(function () {
+        $("#fond_flow :not(:first-child)").css("display", "none");
+    });
 
     var companyID = getUrlParam('compID');
     $('#compIndex').attr('href','/comp_index?compID='+companyID);
@@ -116,17 +122,17 @@ $(document).ready(function () {
             myChart1.setOption(option,true);
             var str2;
             if(parseFloat(datas['dd_buy'])>0){
-                str2 = "<div class='name'>大单主买量：</div><div class='cRed' id='value'>："+datas['dd_buy']+"手</div><br>"
+                str2 = "<span class='name'>大单主买量：</span><span class='cRed' id='value'>："+datas['dd_buy']+"手</span>"
             }else{
-                str2 = "<div class='name'>大单主买量：</div><div class='cGreen' id='value'>"+datas['dd_buy']+"手</div><br>"
+                str2 = "<span class='name'>大单主买量：</span><span class='cGreen' id='value'>"+datas['dd_buy']+"手</span>"
             }
             if(parseFloat(datas['dd_sell'])>0){
-                str2 += "<div class='name'>大单主卖量：</div><div class='cRed' id='value'>"+datas['dd_sell']+"手</div><br>"
+                str2 += "<span class='name'>大单主卖量：</span><span class='cRed' id='value'>"+datas['dd_sell']+"手</span>"
             }
             else{
-                str2 += "<div class='name'>大单主卖量：</div><div class='cGreen' id='value'>"+datas['dd_sell']+"手</div><br>"
+                str2 += "<span class='name'>大单主卖量：</span><span class='cGreen' id='value'>"+datas['dd_sell']+"手</span>"
             }
-            str2 += "<div>大单成交占比："+datas['percent']+"</div>";
+            str2 += "<span>大单成交占比："+datas['percent']+"</span>";
             $('#part3').html(str2);
 
 
