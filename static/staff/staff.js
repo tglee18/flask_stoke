@@ -15,7 +15,7 @@ $(function() {
     $('#compStockHolder').attr('href','/staff?compID='+companyID);
     $('#compInfo').attr('href','/company?compID='+companyID);
 
-    let info_arr = [];
+
     $.ajax({
         url: "/stockholder/a",
         type: "GET",
@@ -24,6 +24,7 @@ $(function() {
         },
         dataType: "json",
         success: function (data) {
+            let info_arr = [];
             for (let i in data.datas) {
                 info_arr.push(data.datas[i]);
             }
@@ -34,7 +35,45 @@ $(function() {
             })
         }
     });
+    $.ajax({
+        url: "/stockholder/b",
+        type: "GET",
+        data: {
+            text: companyID
+        },
+        dataType: "json",
+        success: function (data) {
+            let info_arr = [];
+            for (let i in data.datas) {
+                info_arr.push(data.datas[i]);
+            }
+            let trstr="";
+            $.each(info_arr,function(index,element){
+                trstr=`<tr><td>${info_arr[index]['name']}</td><td>${info_arr[index]['position']}</td><td>${info_arr[index]['bdrq']}</td><td>${info_arr[index]['bdyy']}</td><td>${info_arr[index]['bdsl']}</td><td>${info_arr[index]['cjjj']}</td><td>${info_arr[index]['bdhcgs']}</td></tr>`
+                $("#history_table").append(trstr);
+            })
+        }
+    });
 
+    $.ajax({
+        url: "/stockholder/c",
+        type: "GET",
+        data: {
+            text: companyID
+        },
+        dataType: "json",
+        success: function (data) {
+            let info_arr = [];
+            for (let i in data.datas) {
+                info_arr.push(data.datas[i]);
+            }
+            let trstr="";
+            $.each(info_arr,function(index,element){
+                trstr=`<tr><td>${info_arr[index]['name']}</td><td>${info_arr[index]['bdrq']}</td><td>${info_arr[index]['bdyy']}</td><td>${info_arr[index]['bdsl']}</td><td>${info_arr[index]['cjjj']}</td><td>${info_arr[index]['bdhcgs']}</td><td>${info_arr[index]['glgx']}</td></tr>`
+                $("#connect_table").append(trstr);
+            })
+        }
+    });
 
 
 });

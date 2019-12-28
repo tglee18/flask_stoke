@@ -258,54 +258,61 @@ $(function () {
         }
     });
     //插入数据到表
-    $.ajax({
-        url: "/fininfo/get_fininfo",
-        type: "GET",
-        data: {
-            text: companyID
-        },
-        dataType: "json",
-        success: function (data) {
-            var str = "<span>"+data['datas']['company']+"("+companyID+")</span>";
-            if (data['datas']['updown'] > 0) {
-                var str0 = "<span class='cRed' id='arrow'>" + data['datas']['price']+data['datas']['arrow'] + "</span>";
-                var str1 = "变化量：<span class='cRed'>" + data['datas']['updown'] + "</span>";
-                var str2 = "变化率：<span class='cRed'>" + data['datas']['percent'] + "</span>";
-                var str3 = "今开：<span class='cRed'>" + data['datas']['open'] + "</span>";
-                var str4 = "昨收：<span class='cRed'>" + data['datas']['yestclose'] + "</span>";
-                var str5 = "最高：<span class='cRed'>" + data['datas']['high'] + "</span>";
-                var str6 = "最低：<span class='cRed'>" + data['datas']['low'] + "</span>";
-            } else {
-                var str1 = "变化量：<span class='cGreen'>" + data['datas']['updown'] + "</span>";
-                var str2 = "变化率：<span class='cGreen'>" + data['datas']['percent'] + "</span>";
-                var str3 = "今开：<span class='cGreen'>" + data['datas']['open'] + "</span>";
-                var str4 = "昨收：<span class='cGreen'>" + data['datas']['yestclose'] + "</span>";
-                var str5 = "最高：<span class='cGreen'>" + data['datas']['high'] + "</span>";
-                var str6 = "最低：<span class='cGreen'>" + data['datas']['low'] + "</span>";
+    topRefresh();
+    dealRefresh();
+    function topRefresh(){
+        setTimeout(topRefresh, 5 * 1000);
+        $.ajax({
+            url: "/fininfo/get_fininfo",
+            type: "GET",
+            data: {
+                text: companyID
+            },
+            dataType: "json",
+            success: function (data) {
+                var str = "<span>"+data['datas']['company']+"("+companyID+")</span>";
+                if (data['datas']['updown'] > 0) {
+                    var str0 = "<span class='cRed' id='arrow'>" + data['datas']['price']+data['datas']['arrow'] + "</span>";
+                    var str1 = "变化量：<span class='cRed'>" + data['datas']['updown'] + "</span>";
+                    var str2 = "变化率：<span class='cRed'>" + data['datas']['percent'] + "</span>";
+                    var str3 = "今开：<span class='cRed'>" + data['datas']['open'] + "</span>";
+                    var str4 = "昨收：<span class='cRed'>" + data['datas']['yestclose'] + "</span>";
+                    var str5 = "最高：<span class='cRed'>" + data['datas']['high'] + "</span>";
+                    var str6 = "最低：<span class='cRed'>" + data['datas']['low'] + "</span>";
+                } else {
+                    var str1 = "变化量：<span class='cGreen'>" + data['datas']['updown'] + "</span>";
+                    var str2 = "变化率：<span class='cGreen'>" + data['datas']['percent'] + "</span>";
+                    var str3 = "今开：<span class='cGreen'>" + data['datas']['open'] + "</span>";
+                    var str4 = "昨收：<span class='cGreen'>" + data['datas']['yestclose'] + "</span>";
+                    var str5 = "最高：<span class='cGreen'>" + data['datas']['high'] + "</span>";
+                    var str6 = "最低：<span class='cGreen'>" + data['datas']['low'] + "</span>";
+                }
+                var str7 = "成交量：<span>" + data['datas']['volume'] + "万手</span>";
+                var str8 = "成交额：<span>" + data['datas']['turnover'] + "亿</span>";
+                var str9 = "52周最高：<span class='cRed'>" + data['datas']['highest'] + "</span>";
+                var str10 = "52周最低：<span class='cGreen'>" + data['datas']['lowest'] + "</span>";
+                var str11 = "市盈率：<span>"+data['datas']['syl']+"</span>";
+                var str12 = "流通市值：<span>"+data['datas']['ltsz']+"</span>";
+                $('#comp_name').html(str);
+                $('#price').html(str0);
+                $('#updown').html(str1);
+                $('#percent').html(str2);
+                $('#open').html(str3);
+                $('#yestclose').html(str4);
+                $('#high').html(str5);
+                $('#low').html(str6);
+                $('#volume').html(str7);
+                $('#turnover').html(str8);
+                $('#highest').html(str9);
+                $('#lowest').html(str10);
+                $('#syl').html(str11);
+                $('#ltsz').html(str12);
             }
-            var str7 = "成交量：<span>" + data['datas']['volume'] + "万手</span>";
-            var str8 = "成交额：<span>" + data['datas']['turnover'] + "亿</span>";
-            var str9 = "52周最高：<span class='cRed'>" + data['datas']['highest'] + "</span>";
-            var str10 = "52周最低：<span class='cGreen'>" + data['datas']['lowest'] + "</span>";
-            var str11 = "市盈率：<span>"+data['datas']['syl']+"</span>";
-            var str12 = "流通市值：<span>"+data['datas']['ltsz']+"</span>";
-            $('#comp_name').html(str);
-            $('#price').html(str0);
-            $('#updown').html(str1);
-            $('#percent').html(str2);
-            $('#open').html(str3);
-            $('#yestclose').html(str4);
-            $('#high').html(str5);
-            $('#low').html(str6);
-            $('#volume').html(str7);
-            $('#turnover').html(str8);
-            $('#highest').html(str9);
-            $('#lowest').html(str10);
-            $('#syl').html(str11);
-            $('#ltsz').html(str12);
-        }
-    });
-    $.ajax({
+        });
+    }
+    function dealRefresh(){
+        setTimeout(dealRefresh, 60 * 1000);
+        $.ajax({
             url: "/deal/get_dealinfo",
             type: "GET",
             data: {
@@ -380,5 +387,7 @@ $(function () {
                 $('#inside').html(str25);
             }
         });
+    }
+
 
 });
