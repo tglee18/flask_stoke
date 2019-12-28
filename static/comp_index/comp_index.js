@@ -280,6 +280,7 @@ $(function () {
                     var str5 = "最高：<span class='cRed'>" + data['datas']['high'] + "</span>";
                     var str6 = "最低：<span class='cRed'>" + data['datas']['low'] + "</span>";
                 } else {
+                    var str0 = "<span class='cGreen' id='arrow'>" + data['datas']['price']+data['datas']['arrow'] + "</span>";
                     var str1 = "变化量：<span class='cGreen'>" + data['datas']['updown'] + "</span>";
                     var str2 = "变化率：<span class='cGreen'>" + data['datas']['percent'] + "</span>";
                     var str3 = "今开：<span class='cGreen'>" + data['datas']['open'] + "</span>";
