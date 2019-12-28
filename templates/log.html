@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <script type="text/javascript" src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/static/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/static/login/login.js"></script>
 
     <style>
         body {
@@ -173,11 +173,11 @@
         </svg>
     </div>
     <form class="log" action="" method="">
-        <input type="text" placeholder="请输入账号" name="id">
-        <input type="text" placeholder="请输入密码" name="password">
+        <input type="text" placeholder="请输入账号" name="id" id="user_id">
+        <input type="password" placeholder="请输入密码" name="password" id="user_pwd">
 
     </form>
-    <button>登录</button>
+    <button id="lg_btn">登录</button>
 </div>
 
 </body>

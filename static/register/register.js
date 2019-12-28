@@ -29,6 +29,7 @@ var RequestUtils = {
             dataType: "text",
             success: function (data) {
                 alert(data);
+                window.location.href="/login";
             }
         });
     }

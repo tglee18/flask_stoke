@@ -21,7 +21,8 @@ var RequestUtils = {
             dataType: "json",
             success: function (data) {
                 if (data.statuss == "success") {
-                    window.location.href = "/baseinfo"
+                    alert("登录成功，欢迎您");
+                    window.location.href = "/";
                 }
 
             },
