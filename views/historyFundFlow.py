@@ -8,7 +8,7 @@ historyFundFlow = Blueprint('historyFundFlow', __name__)
 
 
 @historyFundFlow.route('/')
-# @is_login
+@is_login
 def index():
     return render_template("historyFundFlow.html")
 

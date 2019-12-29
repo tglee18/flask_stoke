@@ -13,7 +13,7 @@ def logins():
         if session.get("username"):
             return render_template('index1.html')  # 这里是跳转到搜索页
         else:
-            return render_template('log.html')
+            return render_template('redirectLogin.html')
     else:
         user_id = request.form.get('id')
         pwd = request.form.get('pwd')
