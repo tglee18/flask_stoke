@@ -108,4 +108,9 @@ $(function () {
         }
     };
     RequestUtils.initBind();
+    $("#download").click(function(){
+        if( $("#download_info").css("display")==="none")
+            $("#download_info").css("display","block");
+        else $("#download_info").css("display","none");
+    })
 })
