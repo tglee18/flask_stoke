@@ -52,3 +52,8 @@ def moneyAnalysis():
 @is_login
 def stockHolder():
     return render_template("staff.html")
+
+@indexSet.route('/about')
+@is_login
+def about():
+    return render_template("About.html")
