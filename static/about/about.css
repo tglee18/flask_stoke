@@ -112,15 +112,14 @@
     #bar li a:hover {
         cursor:pointer;
         background-color: rgba(0,0,0,0.5);
+        color:#ddd;
     }
-     #bar li a:active {
+     #bar li .active {
         cursor:pointer;
         background-color: rgba(0,0,0,0.5);
+         color:white
     }
-     #bar li a:link {
-        cursor:pointer;
-        background-color: rgba(0,0,0,0.5);
-    }
+
     .content {
         float:left;
         width:84.5%;
@@ -145,6 +144,6 @@
         line-height:2rem;
         text-indent:2rem;
     }
-        #us1,#announce1{
+    #us1,#announce1{
             display:none;
         }
