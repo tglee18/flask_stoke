@@ -24,7 +24,7 @@ def get_data():
     if data_list:
         code = data_list[0].Code
         code = code[2:]
-        url = "http://quotes.money.163.com/trade/lsjysj_{}.html#01b07".format(code)
+        url = "http://quotes.money.163.com/trade/lsjysj_{}.html?year=2019&season=4".format(code)
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36'
         }
@@ -68,7 +68,7 @@ def get_data2():
         code = data_list[0].Code
         code = code[2:]
         # while 1:
-        url = "http://quotes.money.163.com/trade/lsjysj_{}.html#01b07".format(code)
+        url = "http://quotes.money.163.com/trade/lsjysj_{}.html?year=2019&season=4".format(code)
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36'
         }

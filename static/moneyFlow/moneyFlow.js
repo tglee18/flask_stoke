@@ -17,6 +17,10 @@ var RequestUtils = {
         $("#jc").on("click", function () {
             RequestUtils.get_jc();
         });
+
+        $("#ccc").on("click", function () {
+            RequestUtils.ccclear();
+        });
     },
 
     get_moneyFlow: function () {
@@ -49,6 +53,18 @@ var RequestUtils = {
             type: "GET",
             data: {stokeCode: $("#stoke_code").val()},
             dataType: "html",
+            success: function (data) {
+                console.log(data)
+            }
+        });
+    },
+
+    ccclear: function () {
+        $.ajax({
+            url: "/moneyFlow/cccccclear",
+            type: "GET",
+            data: {},
+            dataType: "json",
             success: function (data) {
                 console.log(data)
             }

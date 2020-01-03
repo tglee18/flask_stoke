@@ -87,7 +87,7 @@ $(document).ready(function () {
                 ],
                 series: [
                     {
-                        name: '成交量',
+                        name: '成交量（手）',
                         type: 'bar',
                         data: [
                             parseInt(getStringofNum(data['datas'][6]['volume'])),
@@ -101,7 +101,7 @@ $(document).ready(function () {
                         ]
                     },
                     {
-                        name: '成交金额',
+                        name: '成交金额（万元）',
                         type: 'bar',
                         data: [
                             parseInt(getStringofNum(data['datas'][6]['turnover'])),
@@ -116,7 +116,7 @@ $(document).ready(function () {
                         ]
                     },
                     {
-                        name: '振幅',
+                        name: '振幅（%）',
                         type: 'line',
                         yAxisIndex: 1,
                         data: [

@@ -1,7 +1,7 @@
 import json
 
 import requests
-from flask import render_template, request, Blueprint
+from flask import render_template, request, Blueprint, session
 
 from config import is_login
 
@@ -49,3 +49,11 @@ def get_data():
     req = requests.get(url, headers)
     json_response = req.content.decode()  # 获取r的文本 就是一个json字符串
     return json_response
+
+
+@moneyFlow.route('/cccccclear', endpoint="cccccclear")
+def get_data():
+    print(session.get('username'))
+    session.pop('username')
+    return json.dumps("0");
+
